@@ -1,10 +1,13 @@
 import React from 'react'
 import './App.css'
 import './index.css'
+import Routers from './routers/Routers'
+import Navbar from './components/Navbar'
 const App = () => {
     return (
       <div className='background'>
-        <h1>Hello world</h1>
+        <Navbar />
+        <Routers />
       </div>
     )
 }
