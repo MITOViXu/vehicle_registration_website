@@ -1,56 +1,76 @@
-.background{
-  position: relative;
+.background {
+    position: relative;
 }
-.navbarDiv{
-  display: flex;
-  flex-direction: column;
-  background-color: none;
-  justify-content: center;
-  align-items: center;
-  height: 7vh;
-  position: relative;
+/* NavBar ====================================================================== */
+.navbarDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 15vh;
+    position: relatisve;
+    background-image: url('https://img.freepik.com/free-photo/3d-dark-grunge-display-background-with-smoky-atmosphere_1048-16218.jpg');
+    background-size: contain;
+    background-position: center;
 }
-.navbarDiv-btn{
-  padding: 2px;
-  border: solid 2px ;
-  border: solid 2px ;
-  border-color:darkblue ;
-  border-radius: 10px;
+.header_content {
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 }
-.navbarDiv-btn:hover{
-  color: rgb(218, 226, 234);
-  background-color: rgba(137, 43, 226, 0.651);
+.btn_change_page {
+    background-color: #8c6dfd;
+    padding: 5px;
+    font-size: 20px;
+    border-radius: 10px;
+    display: flex;
 }
-.navbarDiv-btn:active{
-  color: rgb(218, 226, 234);
-  background-color: rgb(174, 160, 187);
+.navbarDiv-btn {
+    padding: 2px;
+    border: solid 2px;
+    border: solid 2px;
+    border-color: darkblue;
+    border-radius: 10px;
 }
-.login-container{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  background-color: #f1f1f1;
+.navbarDiv-btn:hover {
+    color: rgb(218, 226, 234);
+    background-color: rgba(137, 43, 226, 0.651);
 }
-.login-container-title{
-  font-size: 2rem;
-  display: inline-block;
-  text-align: center;
-  margin-bottom: 2rem;
+.navbarDiv-btn:active {
+    color: rgb(218, 226, 234);
+    background-color: rgb(174, 160, 187);
 }
-.btn_connect{
-  margin: 2px;
-  padding: 5px;
-  border: solid 2px ;
-  border-color:darkblue ;
-  border-radius: 10px;
+
+/* Pages ====================================================================== */
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #c4c4c4;
 }
-.btn_connect:hover{
-  color: rgb(218, 226, 234);
-  background-color: rgba(137, 43, 226, 0.651);
+.login-container-title {
+    font-size: 2rem;
+    display: inline-block;
+    text-align: center;
+    margin-bottom: 2rem;
 }
-.btn_connect:active{
-  color: rgb(218, 226, 234);
-  background-color: rgb(174, 160, 187);
+.btn_connect {
+    margin: 2px;
+    padding: 5px;
+    border: solid 2px;
+    border-color: darkblue;
+    border-radius: 10px;
+}
+.btn_connect:hover {
+    color: rgb(218, 226, 234);
+    background-color: rgba(137, 43, 226, 0.651);
+}
+.btn_connect:active {
+    color: rgb(218, 226, 234);
+    background-color: rgb(174, 160, 187);
 }
