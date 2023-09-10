@@ -1,14 +1,20 @@
-require("@nomicfoundation/hardhat-toolbox");
+/**
+ * @type import('hardhat/config').HardhatUserConfig
+ */
 
-/** @type import('hardhat/config').HardhatUserConfig */
+require("dotenv").config();
+require("@nomiclabs/hardhat-ethers");
+
+const { API_URL, PRIVATE_KEY } = process.env;
+
 module.exports = {
-  solidity:{
-    version : "0.8.19",
-    settings:{
-      optimizer:{
-        runs:200,
-        enable:true
-      }
-    }
-  } 
+  solidity: "0.8.11",
+  defaultNetwork: "sepolia",
+  networks: {
+    hardhat: {},
+    sepolia: {
+      url: API_URL,
+      accounts: [`0x${PRIVATE_KEY}`],
+    },
+  },
 };

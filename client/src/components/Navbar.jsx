@@ -35,7 +35,7 @@ const Navbar = () => {
                     <CustomButton
                         title={togglePage ? 'Đăng nhập' : 'Tra cứu'}
                         handleClick={() => {
-                            navigate(togglePage ? 'login' : 'tracuu')
+                                navigate(togglePage ? 'login' : 'tracuu')
                             setTogglePage(!togglePage)
                         }}
                     />

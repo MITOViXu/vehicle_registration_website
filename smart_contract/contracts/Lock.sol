@@ -1,34 +1,92 @@
-// SPDX-License-Identifier: UNLICENSED
-pragma solidity ^0.8.9;
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.11;
 
-// Uncomment this line to use console.log
-// import "hardhat/console.sol";
+contract Vehicle {
+    //owner là chủ sở hữu của hợp đồng
+    /*
+    owner có quyền hạn:
+    +)thêm các tài khoản quản trị viên
+    +)trực tiếp thêm thông tin về phương tiện
+    */
+    address public owner;
+    /*
+    admin là người của trung tâm đăng kiểm
+    có quyền hạn:
+    thêm dữ liệu, đọc dữ liệu về thông tin xe  
+    */
+    mapping(address => bool) admins;
 
-contract Lock {
-    uint public unlockTime;
-    address payable public owner;
+    struct Vehicle {
+        string vehicleOwner; // chủ xe (mã số CCCD)
+        string numberPlate; // biển số xe
+        string yearManufac; //năm sản xuất
+        uint8 lifetimeLimit; //niêm hạn sử dụng
+        string insepectionReportN; // số phiếu kiểm định
+        string insepectionValidUntil; //hiệu lực đến ngày
+    }
+    /*
+    Khai báo array xe cộ để lưu trữ thông tin
+    */
+    Vehicle[] public vehicles;
+    //mapping biển số xe => biển số xe là độc nhất và nó gắn liền với xe
 
-    event Withdrawal(uint amount, uint when);
+    mapping(string => bool) public numberPlates;
 
-    constructor(uint _unlockTime) payable {
-        require(
-            block.timestamp < _unlockTime,
-            "Unlock time should be in the future"
-        );
-
-        unlockTime = _unlockTime;
-        owner = payable(msg.sender);
+    constructor() {
+        owner = msg.sender;
+        admins[msg.sender] = true; // owner cũng có quyền admin
     }
 
-    function withdraw() public {
-        // Uncomment this line, and the import of "hardhat/console.sol", to print a log in your terminal
-        // console.log("Unlock time is %o and block timestamp is %o", unlockTime, block.timestamp);
+    modifier onlyOnwer() {
+        require(msg.sender == owner, "Only owner can perform this action");
+        _;
+    }
+    modifier onlyAdmin() {
+        require(admins[msg.sender], "Only admin can perform this action");
+        _;
+    }
 
-        require(block.timestamp >= unlockTime, "You can't withdraw yet");
-        require(msg.sender == owner, "You aren't the owner");
+    function addAdmin(address _admin) public onlyOnwer {
+        admins[_admin] = true;
+    }
 
-        emit Withdrawal(address(this).balance, block.timestamp);
+    function getAdmin() public returns (address) {}
 
-        owner.transfer(address(this).balance);
+    function storeVehicle(
+        string memory NumberPlate,
+        string memory VehicleOwner,
+        string memory YearManufac,
+        uint8 LifetimeLimit,
+        string memory InsepectionReportN,
+        string memory InsepectionValidUntil
+    ) public onlyAdmin {
+        require(
+            !numberPlates[NumberPlate],
+            "Vehicle with the same number plate is already exists"
+        );
+        Vehicle memory newVehicle = Vehicle({
+            numberPlate: NumberPlate,
+            vehicleOwner: VehicleOwner,
+            yearManufac: YearManufac,
+            lifetimeLimit: LifetimeLimit,
+            insepectionReportN: InsepectionReportN,
+            insepectionValidUntil: InsepectionValidUntil
+        });
+        vehicles.push(newVehicle);
+        numberPlates[NumberPlate] = true;
+    }
+
+    function getVehicleInfo(
+        string memory NumberPlate
+    ) public view returns (Vehicle memory) {
+        for (uint16 i = 0; i < vehicles.length; i++) {
+            if (
+                keccak256(abi.encodePacked(vehicles[i].numberPlate)) ==
+                keccak256(abi.encodePacked(NumberPlate))
+            ) {
+                return vehicles[i];
+            }
+        }
+        revert("Can't found the vehicle");
     }
 }
