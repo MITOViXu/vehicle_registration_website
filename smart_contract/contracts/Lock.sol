@@ -1,8 +1,8 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.11;
 
-contract Vehicle {
-    //owner là chủ sở hữu của hợp đồng
+contract Lock {
+   //owner là chủ sở hữu của hợp đồng
     /*
     owner có quyền hạn:
     +)thêm các tài khoản quản trị viên
@@ -14,15 +14,19 @@ contract Vehicle {
     có quyền hạn:
     thêm dữ liệu, đọc dữ liệu về thông tin xe  
     */
-    mapping(address => bool) admins;
-
-    struct Vehicle {
-        string vehicleOwner; // chủ xe (mã số CCCD)
-        string numberPlate; // biển số xe
-        string yearManufac; //năm sản xuất
-        uint8 lifetimeLimit; //niêm hạn sử dụng
-        string insepectionReportN; // số phiếu kiểm định
-        string insepectionValidUntil; //hiệu lực đến ngày
+    //mapping(address => bool) admins;
+  
+    struct Vehicle{
+        string  vehicleOwner; // chủ xe (mã số CCCD)
+        string  numberPlate; // biển số xe 
+        uint8  yearManufac; //năm sản xuất
+        uint8  lifetimeLimit; //niêm hạn sử dụng
+        string  insepectionReportN ; // số phiếu kiểm định
+        string  insepectionValidUntil; //hiệu lực đến nam
+        string typeOf; //loại phương tiện
+        string mark; //nhãn hiệu xe
+        uint256 modelCode; // số loại
+        uint256 chassicNum; //số khung
     }
     /*
     Khai báo array xe cộ để lưu trữ thông tin
@@ -30,63 +34,56 @@ contract Vehicle {
     Vehicle[] public vehicles;
     //mapping biển số xe => biển số xe là độc nhất và nó gắn liền với xe
 
-    mapping(string => bool) public numberPlates;
+    mapping(string => bool) public  numberPlates;
 
-    constructor() {
+    constructor(){
         owner = msg.sender;
-        admins[msg.sender] = true; // owner cũng có quyền admin
+        //admins[msg.sender] = true; // owner cũng có quyền admin
     }
+    //event khi update thông tin thành công
+    event NewUpdate(address indexed from , uint256 timestamp ,string message );
 
-    modifier onlyOnwer() {
-        require(msg.sender == owner, "Only owner can perform this action");
-        _;
+    modifier onlyOnwer(){
+     require(msg.sender == owner,"Only owner can perform this action");   
+    _;
     }
-    modifier onlyAdmin() {
-        require(admins[msg.sender], "Only admin can perform this action");
-        _;
-    }
-
-    function addAdmin(address _admin) public onlyOnwer {
-        admins[_admin] = true;
-    }
-
-    function getAdmin() public returns (address) {}
-
-    function storeVehicle(
-        string memory NumberPlate,
+    function storeVehicle(string memory NumberPlate,
         string memory VehicleOwner,
-        string memory YearManufac,
+        uint8 YearManufac,
         uint8 LifetimeLimit,
         string memory InsepectionReportN,
-        string memory InsepectionValidUntil
-    ) public onlyAdmin {
-        require(
-            !numberPlates[NumberPlate],
-            "Vehicle with the same number plate is already exists"
-        );
-        Vehicle memory newVehicle = Vehicle({
+        string memory InsepectionValidUntil,
+        string memory Typeof,
+        string memory Mark,
+        uint256 ModelCode,
+        uint256 ChassicNum
+        ) 
+        public onlyOnwer{
+       //trùng biển số xe
+       require(!numberPlates[NumberPlate],"Vehicle with the same number plate is already exists");       
+       Vehicle memory newVehicle = Vehicle({
             numberPlate: NumberPlate,
             vehicleOwner: VehicleOwner,
             yearManufac: YearManufac,
             lifetimeLimit: LifetimeLimit,
             insepectionReportN: InsepectionReportN,
-            insepectionValidUntil: InsepectionValidUntil
+            insepectionValidUntil: InsepectionValidUntil,
+            typeOf : Typeof,
+            mark : Mark,
+            modelCode : ModelCode,
+            chassicNum : ChassicNum 
         });
         vehicles.push(newVehicle);
         numberPlates[NumberPlate] = true;
+        emit NewUpdate(msg.sender, block.timestamp, "Successfull update!");
     }
 
-    function getVehicleInfo(
-        string memory NumberPlate
-    ) public view returns (Vehicle memory) {
-        for (uint16 i = 0; i < vehicles.length; i++) {
-            if (
-                keccak256(abi.encodePacked(vehicles[i].numberPlate)) ==
-                keccak256(abi.encodePacked(NumberPlate))
-            ) {
-                return vehicles[i];
-            }
-        }
-        revert("Can't found the vehicle");
+    function getVehicleInfo(string memory NumberPlate) public  view returns(Vehicle memory){
+       for(uint8 i = 0 ; i < vehicles.length ; i++ ){
+           if(keccak256(abi.encodePacked(vehicles[i].numberPlate)) == keccak256(abi.encodePacked(NumberPlate))){
+               return vehicles[i];
+           }        
+       }
+       revert("Can't found the vehicle");
     }
 }
