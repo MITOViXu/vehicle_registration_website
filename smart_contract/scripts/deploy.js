@@ -1,6 +1,6 @@
 
 async function main() {
- const Vehicle = await ethers.getContractFactory("Vehicle");
+ const Vehicle = await ethers.getContractFactory("Lock");
 
  const _Vehicle = await Vehicle.deploy();
  console.log("Contract address:" + _Vehicle.address);
