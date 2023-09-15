@@ -57,7 +57,7 @@ const handleSubmit = async (e) => {
                             />
                         </div>
                         <div className="single-input">
-                            <h6 className="input-text">Nhập biển số xe: </h6>
+                            <h6 className="input-text">Nhập biển sốcsdjusdhuihudshfus xe: </h6>
                             <input
                                 value={form.numberPlate}
                                 type={Text}
