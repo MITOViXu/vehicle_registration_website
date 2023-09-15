@@ -2,26 +2,26 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 const KetQua = () => {
-  const handleFormFieldChange = (fieldName, e) => {
-    setForm({ ...form, [fieldName]: e.target.value })
-}
-const [form, setForm] = useState({
-    cccd: '',
-    numberPlate: '',
-    yaerManufac: '',
-    lifetimeLimit: '',
-    insepectionReportN: '',
-    insepectionValidUntil: '',
-    typeOf: '',
-    mark: '',
-    modelCode: '',
-    chassicNum: '',
-})
-const navigate = useNavigate()
-const handleSubmit = async (e) => {
-    e.preventDefault()
-    setForm({ ...form })
-}
+    const handleFormFieldChange = (fieldName, e) => {
+        setForm({ ...form, [fieldName]: e.target.value })
+    }
+    const [form, setForm] = useState({
+        cccd: '',
+        numberPlate: '',
+        yaerManufac: '',
+        lifetimeLimit: '',
+        insepectionReportN: '',
+        insepectionValidUntil: '',
+        typeOf: '',
+        mark: '',
+        modelCode: '',
+        chassicNum: '',
+    })
+    const navigate = useNavigate()
+    const handleSubmit = async (e) => {
+        e.preventDefault()
+        setForm({ ...form })
+    }
     return (
         <div className="login-container">
             <div className="image-tracuu">
@@ -57,7 +57,7 @@ const handleSubmit = async (e) => {
                             />
                         </div>
                         <div className="single-input">
-                            <h6 className="input-text">Nhập biển sốcsdjusdhuihudshfus xe: </h6>
+                            <h6 className="input-text">Nhập biển số xe: </h6>
                             <input
                                 value={form.numberPlate}
                                 type={Text}
