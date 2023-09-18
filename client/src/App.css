@@ -13,6 +13,13 @@
     background-size: contain;
     background-position: center;
 }
+.header_content-tracuu{
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
 .header_content {
     padding-top: 10px;
     display: flex;

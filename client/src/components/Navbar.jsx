@@ -14,28 +14,37 @@ const Navbar = () => {
     return (
         <div className="navbarDiv">
             {togglePage ? (
-                <div className="header_content">
+                <div className="header_content-tracuu">
                     <h3 style={{ color: 'white' }}>
-                        Nếu bạn là thành viên của tổ chức hãy Đăng nhập để quản
-                        lý đi nào
+                        Nếu bạn là thành viên của tổ chức hãy Đăng nhập lý đi
+                        nào
                     </h3>
-                    <CustomButton
+                    
+                    <CustomButton                        
                         title={togglePage ? 'Đăng nhập' : 'Tra cứu'}
                         handleClick={() => {
                             navigate(togglePage ? 'login' : 'tracuu')
                             setTogglePage(!togglePage)
                         }}
                     />
+                    <div>
+                        <CustomButton
+                            title={'Tra cứu'}
+                            handleClick={() => {
+                                navigate('ketqua')
+                            }}
+                        />
+                    </div>
                 </div>
             ) : (
                 <div className="header_content">
-                    <h3 style={{color: 'white'}}>
-                        Nếu bạn là khách hàng, hãy tra cứu đi nào
+                    <h3 style={{ color: 'white' }}>
+                        Nếu bạn là khách hàng, hãy tra cứu
                     </h3>
                     <CustomButton
                         title={togglePage ? 'Đăng nhập' : 'Tra cứu'}
                         handleClick={() => {
-                                navigate(togglePage ? 'login' : 'tracuu')
+                            navigate(togglePage ? 'login' : 'tracuu')
                             setTogglePage(!togglePage)
                         }}
                     />

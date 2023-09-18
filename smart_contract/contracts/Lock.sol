@@ -1,8 +1,13 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.11;
 
+<<<<<<< HEAD
 contract Lock {
    //owner là chủ sở hữu của hợp đồng
+=======
+contract Lock{
+    //owner là chủ sở hữu của hợp đồng
+>>>>>>> e83ef4ad0d4f71409f779373c1bc974470afd8c7
     /*
     owner có quyền hạn:
     +)thêm các tài khoản quản trị viên

@@ -52,7 +52,7 @@ const Tracuu = () => {
                     <div className="single-input">
                         <div>
                             <h6 className="input-text">
-                                Chủ xe (Viết số căn cước vào):{' '}
+                                Chủ xe :{' '}
                             </h6>
                             <input
                                 value={form.cccd}
@@ -62,10 +62,11 @@ const Tracuu = () => {
                                 onChange={(e) =>
                                     handleFormFieldChange('cccd', e)
                                 }
+                                disabled
                             />
                         </div>
                         <div className="single-input">
-                            <h6 className="input-text">Biển số xe: </h6>
+                            <h6 className="input-text">Nhập biển số xe: </h6>
                             <input
                                 value={form.numberPlate}
                                 type={Text}
@@ -87,6 +88,7 @@ const Tracuu = () => {
                                 onChange={(e) =>
                                     handleFormFieldChange('yaerManufac', e)
                                 }
+                                disabled
                             />
                         </div>
                     </div>
@@ -101,6 +103,7 @@ const Tracuu = () => {
                                 onChange={(e) =>
                                     handleFormFieldChange('lifetimeLimit', e)
                                 }
+                                disabled
                             />
                         </div>
                         <div className="single-input">
@@ -116,6 +119,7 @@ const Tracuu = () => {
                                         e
                                     )
                                 }
+                                disabled
                             />
                         </div>
                         <div className="single-input">
@@ -131,6 +135,7 @@ const Tracuu = () => {
                                         e
                                     )
                                 }
+                                disabled
                             />
                         </div>
                     </div>
@@ -145,6 +150,7 @@ const Tracuu = () => {
                                 onChange={(e) =>
                                     handleFormFieldChange('typeOf', e)
                                 }
+                                disabled
                             />
                         </div>
                         <div className="single-input">
@@ -157,6 +163,7 @@ const Tracuu = () => {
                                 onChange={(e) =>
                                     handleFormFieldChange('mark', e)
                                 }
+                                disabled
                             />
                         </div>
                         <div className="single-input">
@@ -169,6 +176,7 @@ const Tracuu = () => {
                                 onChange={(e) =>
                                     handleFormFieldChange('modelCode', e)
                                 }
+                                disabled
                             />
                         </div>
                     </div>
@@ -182,16 +190,17 @@ const Tracuu = () => {
                             onChange={(e) =>
                                 handleFormFieldChange('chassicNum', e)
                             }
+                            disabled
                         />
                     </div>
                 </div>
                 <div>
                     <CustomButton
-                        title={'Tra Cứu'}
-                        handleClick={() => {
-                            navigate('ketqua')
-                        }}
-                    />
+                    title={'Tra Cứu'}
+                    handleClick={() => {
+                        navigate('ketqua')
+                    }}
+                />
                 </div>
             </form>
         </div>
