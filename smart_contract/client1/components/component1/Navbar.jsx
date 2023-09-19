@@ -1,9 +1,16 @@
 import React from 'react'
-import "./Navbar.css"
+import "./page1.css"
+const NavBarItem = ({ title }) => (
+  <li className='navbarItems'>{title}</li>
+);
 const Navbar = () => {
   return (
     <div className='navbar'>
-      <h1>Hello</h1>
+      <ul className="ulNavbarStyle">
+      {["Market", "Exchange", "Tutorials", "Wallets"].map((item, index) => (
+          <NavBarItem title={item} />
+        ))}
+      </ul>
     </div>
   )
 }
