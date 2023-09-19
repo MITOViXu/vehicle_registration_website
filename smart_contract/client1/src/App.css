@@ -1,5 +1,7 @@
 body{
   background-color: rgb(109, 109, 109);
+  padding: 0;
+  margin: 0;
 }
 .min-h-screen{
   min-height: 100vh;

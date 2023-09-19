@@ -1,4 +1,9 @@
 .navbar{
   height: 100px;
-  background-color: beige;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  
+  background-color: rgb(231, 250, 210);
 }
