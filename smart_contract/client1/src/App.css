@@ -1,1 +1,6 @@
-
+body{
+  background-color: rgb(109, 109, 109);
+}
+.min-h-screen{
+  min-height: 100vh;
+}
