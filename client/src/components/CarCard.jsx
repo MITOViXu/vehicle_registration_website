@@ -9,12 +9,10 @@ const NavBarItem = ({ title, value }) => (
 
 const CarCard = () => {
     return (
-        <div className="card-car">
-            <ul className="carListItem">
+        <div>
+            {/* <ul className="carListItem">
                 {[
-                    "Căn cước :  ",
-                    "Biển số :  ",
-                    "Thông tin chủ xe :  ",
+                    "Thông tin chủ xe cccd :  ",
                     "Biển số xe :  ",
                     "Năm sản xuất :  ",
                     "Loại phương tiện :  ",
@@ -31,7 +29,30 @@ const CarCard = () => {
                         value={"Hello"}
                     />
                 ))}
-            </ul>
+            </ul> */}
+            <div className="block-table-container">
+                <table className="block-table">
+                    <thead>
+                        <tr>
+                            <th>Block Number</th>
+                            <th>Timestamp</th>
+                            <th>Transactions</th>
+                            <th>Miner</th>
+                            <th>Difficulty</th>
+                            {/* Thêm các cột khác tùy theo yêu cầu */}
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr key={1}>
+                            <td>{"block.blockNumber"}</td>
+                            <td>{"block.blockNumber"}</td>
+                            <td>{"block.blockNumber"}</td>
+                            <td>{"block.blockNumber"}</td>
+                            <td>{"block.blockNumber"}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     )
 }

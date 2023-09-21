@@ -1,12 +1,10 @@
 import React from "react"
 import pic1 from "./pic1.jpg"
 import "./Login.css"
-import { Link, useNavigate } from "react-router-dom"
 import { useState, useEffect } from "react"
 import { contractAbi, contractAddress } from "../constant/constant"
 import { ethers } from "ethers"
 const Login = (props) => {
-    const navigate = useNavigate()
     const [provider, setProvider] = useState(null)
     const [account, setAccount] = useState(null)
     return (
