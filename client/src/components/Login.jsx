@@ -5,7 +5,6 @@ const Login = (props) => {
   return (
     <div className="login-container">
 
-
       <h1 style={{ marginBottom: "0px" }}>
         <span className="colorful-text">
           Vehicle Registry Decentralized Application

@@ -7,7 +7,7 @@ import Connected from './components/Connected';
 function App() {
   return (
     <div className="App">
-      <Login />
+     <Login/>
     </div>
   );
 }
