@@ -8,6 +8,16 @@
     background-position: right center;
     font-size: x-large;
 }
+.login-container-connect{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 200vh;
+    background-image: url("./pic1.jpg");
+    background-size: cover;
+    background-position: right center;
+    font-size: x-large;
+}
 .find-car {
     display: flex;
     align-items: center;
@@ -22,9 +32,28 @@
     background-color: #f2f2f2;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    grid-template-columns: repeat(5, 1fr); /* 2 cột */
-    grid-template-rows: repeat(2, 1fr); /* 5 hàng */
+    grid-template-columns: repeat(5, 1fr); /* 5 cột */
+    grid-template-rows: repeat(2, 1fr); /* 2 hàng */
     gap: 10px; /* Khoảng cách giữa các div con */
+}
+.information-car-connected{
+    background-color: #f2f2f2;
+    width: 1400px;
+    height: 30vh;
+    display: grid;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    grid-template-columns: repeat(6, 1fr); 
+    grid-template-rows: repeat(2, 1fr); 
+    gap: 10px; 
+}
+.form-connected {
+    width: 1400px;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); 
+    grid-template-rows: repeat(2, 1fr); 
+    gap: 10px; 
 }
 .search-infor {
     border-radius: 10px;

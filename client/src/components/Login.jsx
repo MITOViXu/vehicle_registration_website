@@ -2,11 +2,46 @@ import React from "react"
 import pic1 from "./pic1.jpg"
 import "./Login.css"
 import { useState, useEffect } from "react"
-import { contractAbi, contractAddress } from "../constant/constant"
+import { abi, contractAddress } from "../constant/constant"
 import { ethers } from "ethers"
 const Login = (props) => {
     const [provider, setProvider] = useState(null)
     const [account, setAccount] = useState(null)
+    const [vehicleinfor, setVehicleinfor] = useState(null)
+    const [numberPlate, setNumberPlate] = useState("")
+
+    //function get Vehicle info
+    async function searchInfo(numberPlate) {
+        const provider = new ethers.providers.Web3Provider(window.ethereum)
+        setProvider(provider)
+        await provider.send("eth_requestAccounts", [])
+        const signer = provider.getSigner()
+        const address = await signer.getAddress()
+        const contractInstance = new ethers.Contract(
+            contractAddress,
+            abi,
+            signer
+        )
+        const results = await contractInstance.getVehicleInfo(numberPlate)
+        setVehicleinfor(results)
+    }
+    async function handleNumberPlateChange(e) {
+        setNumberPlate(e.target.value)
+    }
+    const handleSubmit = async (e) => {
+        e.preventDefault()
+        const provider = new ethers.providers.Web3Provider(window.ethereum)
+        setProvider(provider)
+        await provider.send("eth_requestAccounts", [])
+        const signer = provider.getSigner()
+        const contractInstance = new ethers.Contract(
+            contractAddress,
+            abi,
+            signer
+        )
+        const results = await contractInstance.getVehicleInfo(numberPlate)
+        setVehicleinfor(results)
+    }
     return (
         <div className="login-container">
             <h1 style={{ marginBottom: "0px" }}>
@@ -22,7 +57,7 @@ const Login = (props) => {
             </button>
 
             <div className="find-car">
-                <form class="form">
+                <form class="form" onSubmit={handleSubmit}>
                     <div class="form-group">
                         <label for="name">Nhập CCCD chủ xe:</label>
                         <input
@@ -38,92 +73,128 @@ const Login = (props) => {
                             id="message"
                             name="message"
                             placeholder="Biển số xe"
-                            value={props.numberPlate}
-                        ></textarea>
+                            value={numberPlate}
+                            onChange={(e) => handleNumberPlateChange(e)}
+                        />
                     </div>
 
-                    <button className="login-button" onclick={props.searchInfo}>
+                    <button
+                        className="login-button"
+                        // onClick={() => {
+                        //     searchInfo(numberPlate)
+                        // }}
+                    >
                         Search Information
                     </button>
                 </form>
             </div>
 
             <div className="information-car">
-                <div class="form-group">
-                    <label for="name">Thông tin chủ xe</label>
-                    <input
-                        type="text"
-                        id="1"
-                        value={props.veicleOwner}
-                        readOnly
-                    />
-                </div>
-                <div class="form-group">
-                    <label for="name">Biển số xe</label>
-                    <input
-                        type="text"
-                        id="2"
-                        value={props.numberPlate}
-                        readOnly
-                    />
-                </div>
-                <div class="form-group">
-                    <label for="name">Năm sản xuất</label>
-                    <input
-                        type="text"
-                        id="3"
-                        value={props.yearManufac}
-                        readOnly
-                    />
-                </div>
-                <div class="form-group">
-                    <label for="name">Loại phương tiện</label>
-                    <input type="text" id="7" value={props.typeOf} readOnly />
-                </div>
-                <div class="form-group">
-                    <label for="name">Nhãn hiệu xe</label>
-                    <input type="text" id="8" value={props.Mark} readOnly />
-                </div>
-                <div class="form-group">
-                    <label for="name">Số loại</label>
-                    <input
-                        type="text"
-                        id="9"
-                        value={props.modelCode}
-                        readOnly
-                    />
-                </div>
-                <div class="form-group">
-                    <label for="name">Số khung</label>
-                    <input
-                        type="text"
-                        id="10"
-                        value={props.chassicNum}
-                        readOnly
-                    />
-                </div>
-                <div class="form-group">
-                    <label for="name">Niêm Hạn sử dụng</label>
-                    <input
-                        type="text"
-                        id="4"
-                        value={props.lifeLimit}
-                        readOnly
-                    />
-                </div>
-                <div class="form-group">
-                    <label for="name">Số phiếu kiểm định</label>
-                    <input type="text" id="5" value={props.inspectN} readOnly />
-                </div>
-                <div class="form-group">
-                    <label for="name">Hiệu lực đến năm</label>
-                    <input
-                        type="text"
-                        id="6"
-                        value={props.inspectValid}
-                        readOnly
-                    />
-                </div>
+                {vehicleinfor == null ? (
+                    <div>
+                        <h1>You didn't search yet</h1>
+                    </div>
+                ) : (
+                    <div>
+                        <div class="form-group">
+                            <label for="name">Thông tin chủ xe</label>
+                            <input
+                                type="text"
+                                value={vehicleinfor.vehicleOwner}
+                                id="1"
+                                readOnly
+                            />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="name">Biển số xe</label>
+                            <input
+                                type="text"
+                                id="2"
+                                value={vehicleinfor.numberPlate}
+                                readOnly
+                            />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="name">Năm sản xuất</label>
+                            <input
+                                type="text"
+                                id="3"
+                                value={vehicleinfor.yearManufac}
+                                readOnly
+                            />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="name">Loại phương tiện</label>
+                            <input
+                                type="text"
+                                id="7"
+                                value={vehicleinfor.typeOf}
+                                readOnly
+                            />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="name">Nhãn hiệu xe</label>
+                            <input
+                                type="text"
+                                id="8"
+                                value={vehicleinfor.mark}
+                                readOnly
+                            />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="name">Số loại</label>
+                            <input
+                                type="text"
+                                id="9"
+                                value={vehicleinfor.modelCode}
+                                readOnly
+                            />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="name">Số khung</label>
+                            <input
+                                type="text"
+                                id="10"
+                                value={vehicleinfor.chassicNum}
+                                readOnly
+                            />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="name">Niêm Hạn sử dụng</label>
+                            <input
+                                type="text"
+                                id="4"
+                                value={vehicleinfor.lifetimeLimit}
+                                readOnly
+                            />
+                        </div>
+                        <div class="form-group">
+                            <label for="name">Số phiếu kiểm định</label>
+                            <input
+                                type="text"
+                                id="5"
+                                value={vehicleinfor.insepectionReportN}
+                                readOnly
+                            />
+                        </div>
+                        <div class="form-group">
+                            <label for="name">Hiệu lực đến năm</label>
+                            <input
+                                type="text"
+                                id="6"
+                                value={vehicleinfor.insepectionValidUntil}
+                                readOnly
+                            />
+                        </div>
+                    </div>
+                )}
             </div>
         </div>
     )

@@ -1,16 +1,40 @@
+// struct Vehicle{
+//     string  vehicleOwner; // chủ xe (mã số CCCD)
+//     string  numberPlate; // biển số xe
+//     uint8  yearManufac; //năm sản xuất
+//     uint8  lifetimeLimit; //niêm hạn sử dụng
+//     string  insepectionReportN ; // số phiếu kiểm định
+//     string  insepectionValidUntil; //hiệu lực đến nam
+//     string typeOf; //loại phương tiện
+//     string mark; //nhãn hiệu xe
+//     uint256 modelCode; // số loại
+//     uint256 chassicNum; //số khung
+// }
 import React from "react"
-import pic1 from "./pic1.jpg"
 import "./Login.css"
 import { Link, useNavigate } from "react-router-dom"
 import { useState, useEffect } from "react"
+import { abi, contractAddress } from "../constant/constant"
 import { ethers } from "ethers"
-const Login = (props) => {
-    const navigate = useNavigate()
+import CarCard from "./CarCard"
+const Connected = (props) => {
     const [provider, setProvider] = useState(null)
     const [account, setAccount] = useState(null)
+    const [formData, setFormData] = useState({
+        vehicleOwner: "",
+        numberPlate: "",
+        yearManufac: 0,
+        lifetimeLimit: 0,
+        insepectionReportN: "",
+        insepectionValidUntil: "",
+        typeOf: "",
+        mark: "",
+        modelCode: 0,
+        chassicNum: 0,
+    })
 
     return (
-        <div className="login-container">
+        <div className="login-container-connect">
             <h1 style={{ marginBottom: "0px" }}>
                 <span className="colorful-text">
                     Vehicle Registry Decentralized Application Connect
@@ -23,9 +47,8 @@ const Login = (props) => {
             <button className="login-button" onClick={props.logout}>
                 Logout
             </button>
-
-            <div className="find-car">
-                <form class="form">
+            <div className="information-car-connected">
+                <form class="form-connected">
                     <div class="form-group">
                         <label for="name">Nhập CCCD chủ xe:</label>
                         <input
@@ -44,92 +67,96 @@ const Login = (props) => {
                             value={props.numberPlate}
                         ></textarea>
                     </div>
-
-                    <button className="login-button" onclick={props.searchInfo}>
-                        Search Information
-                    </button>
+                    <div class="form-group">
+                        <label for="name">Thông tin chủ xe</label>
+                        <input
+                            type="text"
+                            id="1"
+                            value={props.veicleOwner}
+                            readOnly
+                        />
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Biển số xe</label>
+                        <input
+                            type="text"
+                            id="2"
+                            value={props.numberPlate}
+                            readOnly
+                        />
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Năm sản xuất</label>
+                        <input
+                            type="text"
+                            id="3"
+                            value={props.yearManufac}
+                            readOnly
+                        />
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Loại phương tiện</label>
+                        <input
+                            type="text"
+                            id="7"
+                            value={props.typeOf}
+                            readOnly
+                        />
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Nhãn hiệu xe</label>
+                        <input type="text" id="8" value={props.Mark} readOnly />
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Số loại</label>
+                        <input
+                            type="text"
+                            id="9"
+                            value={props.modelCode}
+                            readOnly
+                        />
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Số khung</label>
+                        <input
+                            type="text"
+                            id="10"
+                            value={props.chassicNum}
+                            readOnly
+                        />
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Niêm Hạn sử dụng</label>
+                        <input
+                            type="text"
+                            id="4"
+                            value={props.lifeLimit}
+                            readOnly
+                        />
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Số phiếu kiểm định</label>
+                        <input
+                            type="text"
+                            id="5"
+                            value={props.inspectN}
+                            readOnly
+                        />
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Hiệu lực đến năm</label>
+                        <input
+                            type="text"
+                            id="6"
+                            value={props.inspectValid}
+                            readOnly
+                        />
+                    </div>
                 </form>
-            </div>
-
-            <div className="information-car">
-                <div class="form-group">
-                    <label for="name">Thông tin chủ xe</label>
-                    <input
-                        type="text"
-                        id="1"
-                        value={props.veicleOwner}
-                        readOnly
-                    />
-                </div>
-                <div class="form-group">
-                    <label for="name">Biển số xe</label>
-                    <input
-                        type="text"
-                        id="2"
-                        value={props.numberPlate}
-                        readOnly
-                    />
-                </div>
-                <div class="form-group">
-                    <label for="name">Năm sản xuất</label>
-                    <input
-                        type="text"
-                        id="3"
-                        value={props.yearManufac}
-                        readOnly
-                    />
-                </div>
-                <div class="form-group">
-                    <label for="name">Loại phương tiện</label>
-                    <input type="text" id="7" value={props.typeOf} readOnly />
-                </div>
-                <div class="form-group">
-                    <label for="name">Nhãn hiệu xe</label>
-                    <input type="text" id="8" value={props.Mark} readOnly />
-                </div>
-                <div class="form-group">
-                    <label for="name">Số loại</label>
-                    <input
-                        type="text"
-                        id="9"
-                        value={props.modelCode}
-                        readOnly
-                    />
-                </div>
-                <div class="form-group">
-                    <label for="name">Số khung</label>
-                    <input
-                        type="text"
-                        id="10"
-                        value={props.chassicNum}
-                        readOnly
-                    />
-                </div>
-                <div class="form-group">
-                    <label for="name">Niêm Hạn sử dụng</label>
-                    <input
-                        type="text"
-                        id="4"
-                        value={props.lifeLimit}
-                        readOnly
-                    />
-                </div>
-                <div class="form-group">
-                    <label for="name">Số phiếu kiểm định</label>
-                    <input type="text" id="5" value={props.inspectN} readOnly />
-                </div>
-                <div class="form-group">
-                    <label for="name">Hiệu lực đến năm</label>
-                    <input
-                        type="text"
-                        id="6"
-                        value={props.inspectValid}
-                        readOnly
-                    />
-                </div>
-            </div>
+            </div>{/**/}
+            <CarCard/> 
         </div>
     )
 }
 
-export default Login
+export default Connected

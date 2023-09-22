@@ -7,20 +7,35 @@ import { contractAddress, abi } from "./constant/constant"
 function App() {
     const [provider, setProvider] = useState(null)
     const [account, setAccount] = useState(null)
+    const [contractInstance, setcontractInstance] = useState(null)
     const [isConnected, setIsConnected] = useState(false)
+    const [car, setCar] = useState({
+        provider: null,
+        signer: null,
+        contract: null,
+    })
     async function connectToMetamask() {
         if (window.ethereum) {
             try {
-                const provider = new ethers.providers.Web3Provider(
-                    window.ethereum
+                const { ethereum } = window
+                const account = await ethereum.request({
+                    method: "eth_requestAccounts",
+                })
+
+                window.ethereum.on("accountsChanged", () => {
+                    window.location.reload()
+                })
+                setAccount(account)
+                const provider = new ethers.providers.Web3Provider(ethereum) //read the Blockchain
+                const signer = provider.getSigner() //write the blockchain
+
+                const contract = new ethers.Contract(
+                    contractAddress,
+                    abi,
+                    signer
                 )
-                setProvider(provider)
-                await provider.send("eth_requestAccounts", [])
-                const signer = provider.getSigner()
-                const address = await signer.getAddress()
-                setAccount(address)
-                console.log("Metamask Connected : " + address)
-                setIsConnected(true)
+                console.log(contract)
+                setCar({ provider, signer, contract })
             } catch (err) {
                 console.error(err)
             }
@@ -34,7 +49,7 @@ function App() {
     return (
         <div className="App">
             {isConnected ? (
-                <Connected logout={handleLogOut} account={account} />
+                <Connected logout={handleLogOut} account={account} car={car} />
             ) : (
                 <Login connectWallet={connectToMetamask} />
             )}
