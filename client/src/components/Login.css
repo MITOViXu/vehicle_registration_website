@@ -104,8 +104,8 @@ textarea {
   .block-table {
     border-collapse: collapse;
     width: 100%;
-    border: 10px solid #ccc;
-    border-radius: 20px;
+    border-radius: 10px;
+    overflow: hidden; /* Để ẩn đi các góc bên trong bảng */
   }
   
   .block-table th,

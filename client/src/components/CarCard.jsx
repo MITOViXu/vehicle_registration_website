@@ -1,5 +1,6 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import "./Login.css"
+
 const NavBarItem = ({ title, value }) => (
     <div className="couple-item">
         <li className="item">{title}</li>
@@ -7,52 +8,43 @@ const NavBarItem = ({ title, value }) => (
     </div>
 )
 
-const CarCard = () => {
+const CarCard = ({ state }) => {
+    const [car, setMemos] = useState([])
+    const { contract } = state
+    useEffect(() => {
+        const memosMessage = async () => {
+            const car = await contract.getMemos()
+            setMemos(car)
+            //console.log(memos)
+        }
+        contract && memosMessage()
+    }, [contract])
     return (
-        <div>
-            {/* <ul className="carListItem">
-                {[
-                    "Thông tin chủ xe cccd :  ",
-                    "Biển số xe :  ",
-                    "Năm sản xuất :  ",
-                    "Loại phương tiện :  ",
-                    "Nhãn hiệu xe :  ",
-                    "Số loại :  ",
-                    "Số khung :  ",
-                    "Niêm hạn sử dụng :  ",
-                    "Số phiếu kiểm định :  ",
-                    "Hiệu lực đến năm :  ",
-                ].map((item, index) => (
-                    <NavBarItem
-                        key={item + index}
-                        title={item}
-                        value={"Hello"}
-                    />
-                ))}
-            </ul> */}
-            <div className="block-table-container">
-                <table className="block-table">
-                    <thead>
-                        <tr>
-                            <th>Block Number</th>
-                            <th>Timestamp</th>
-                            <th>Transactions</th>
-                            <th>Miner</th>
-                            <th>Difficulty</th>
-                            {/* Thêm các cột khác tùy theo yêu cầu */}
+        <div className="block-table-container">
+            <h1>Blocks</h1>
+            <table className="block-table">
+                <thead>
+                    <tr>
+                        <th>Block</th>
+                        <th>Căn cước</th>
+                        <th>Biển số xe</th>
+                        <th>Số loại</th>
+                        <th>Nhãn hiệu</th>
+                        {/* Thêm các cột khác tùy theo yêu cầu */}
+                    </tr>
+                </thead>
+                <tbody>
+                    {car.map((block, index) => (
+                        <tr key={index}>
+                            <td>{index}</td>
+                            <td>{block.veicleOwner}</td>
+                            <td>{block.numberPlate}</td>
+                            <td>{block.modelCode}</td>
+                            <td>{block.Mark}</td>
                         </tr>
-                    </thead>
-                    <tbody>
-                        <tr key={1}>
-                            <td>{"block.blockNumber"}</td>
-                            <td>{"block.blockNumber"}</td>
-                            <td>{"block.blockNumber"}</td>
-                            <td>{"block.blockNumber"}</td>
-                            <td>{"block.blockNumber"}</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+                    ))}
+                </tbody>
+            </table>
         </div>
     )
 }
