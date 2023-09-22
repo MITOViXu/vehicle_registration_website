@@ -20,19 +20,54 @@ import CarCard from "./CarCard"
 const Connected = (props) => {
     const [provider, setProvider] = useState(null)
     const [account, setAccount] = useState(null)
-    const [formData, setFormData] = useState({
-        vehicleOwner: "",
-        numberPlate: "",
-        yearManufac: 0,
-        lifetimeLimit: 0,
-        insepectionReportN: "",
-        insepectionValidUntil: "",
-        typeOf: "",
-        mark: "",
-        modelCode: 0,
-        chassicNum: 0,
-    })
 
+    const adminInsert = async (e) => {
+        e.preventDefault()
+        const { contract } = props.car
+        const VehicleOwner = document.querySelector("#VehicleOwner").value
+        const numberPlate = document.querySelector("#numberPlate").value
+        const yearManufac = ethers.utils.parseUnits(
+            document.querySelector("#yearManufac").value,
+            0
+        )
+        const typeOf = document.querySelector("#typeOf").value
+        const mark = document.querySelector("#mark").value
+        const modelCode = ethers.utils.parseUnits(
+            document.querySelector("#modelCode").value,
+            0
+        )
+        const classicNum = ethers.utils.parseUnits(
+            document.querySelector("#chassicNum").value,
+            0
+        )
+        const lifetimeLimit = ethers.utils.parseUnits(
+            document.querySelector("#lifetimeLimit").value,
+            0
+        )
+        const insepectionReportN = document.querySelector(
+            "#insepectionReportN"
+        ).value
+        const insepectionValidUntil = document.querySelector(
+            "#insepectionValidUntil"
+        ).value
+
+        const transaction = await contract.storeVehicle(
+            VehicleOwner,
+            numberPlate,
+            yearManufac,
+            lifetimeLimit,
+            insepectionReportN,
+            insepectionValidUntil,
+            typeOf,
+            mark,
+            modelCode,
+            classicNum
+        )
+        await transaction.wait()
+        alert("Transaction is successul")
+        console.log("Transaction is successul")
+        window.location.reload()
+    }
     return (
         <div className="login-container-connect">
             <h1 style={{ marginBottom: "0px" }}>
@@ -48,113 +83,101 @@ const Connected = (props) => {
                 Logout
             </button>
             <div className="information-car-connected">
-                <form class="form-connected">
+                <form class="form-connected" onSubmit={adminInsert}>
                     <div class="form-group">
                         <label for="name">Nhập CCCD chủ xe:</label>
                         <input
+                            style={{ fontSize: "25px" }}
                             type="text"
-                            id="name"
-                            name="name"
-                            placeholder="CCCD"
+                            required="required"
+                            id="VehicleOwner"
                         />
                     </div>
                     <div class="form-group">
                         <label for="message">Nhập biển số xe:</label>
                         <textarea
-                            id="message"
-                            name="message"
-                            placeholder="Biển số xe"
-                            value={props.numberPlate}
+                            style={{ fontSize: "25px" }}
+                            required="required"
+                            id="numberPlate"
                         ></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label for="name">Thông tin chủ xe</label>
-                        <input
-                            type="text"
-                            id="1"
-                            value={props.veicleOwner}
-                            readOnly
-                        />
-                    </div>
-                    <div class="form-group">
-                        <label for="name">Biển số xe</label>
-                        <input
-                            type="text"
-                            id="2"
-                            value={props.numberPlate}
-                            readOnly
-                        />
                     </div>
                     <div class="form-group">
                         <label for="name">Năm sản xuất</label>
                         <input
+                            style={{ fontSize: "25px" }}
                             type="text"
-                            id="3"
-                            value={props.yearManufac}
-                            readOnly
+                            required="required"
+                            id="yearManufac"
                         />
                     </div>
                     <div class="form-group">
                         <label for="name">Loại phương tiện</label>
                         <input
+                            style={{ fontSize: "25px" }}
                             type="text"
-                            id="7"
-                            value={props.typeOf}
-                            readOnly
+                            required="required"
+                            id="typeOf"
                         />
                     </div>
                     <div class="form-group">
                         <label for="name">Nhãn hiệu xe</label>
-                        <input type="text" id="8" value={props.Mark} readOnly />
+                        <input
+                            style={{ fontSize: "25px" }}
+                            type="text"
+                            required="required"
+                            id="mark"
+                        />
                     </div>
                     <div class="form-group">
                         <label for="name">Số loại</label>
                         <input
+                            style={{ fontSize: "25px" }}
                             type="text"
-                            id="9"
-                            value={props.modelCode}
-                            readOnly
+                            required="required"
+                            id="modelCode"
                         />
                     </div>
                     <div class="form-group">
                         <label for="name">Số khung</label>
                         <input
+                            style={{ fontSize: "25px" }}
                             type="text"
-                            id="10"
-                            value={props.chassicNum}
-                            readOnly
+                            required="required"
+                            id="chassicNum"
                         />
                     </div>
                     <div class="form-group">
                         <label for="name">Niêm Hạn sử dụng</label>
                         <input
+                            style={{ fontSize: "25px" }}
                             type="text"
-                            id="4"
-                            value={props.lifeLimit}
-                            readOnly
+                            required="required"
+                            id="lifetimeLimit"
                         />
                     </div>
                     <div class="form-group">
                         <label for="name">Số phiếu kiểm định</label>
                         <input
+                            style={{ fontSize: "25px" }}
                             type="text"
-                            id="5"
-                            value={props.inspectN}
-                            readOnly
+                            required="required"
+                            id="insepectionReportN"
                         />
                     </div>
                     <div class="form-group">
                         <label for="name">Hiệu lực đến năm</label>
                         <input
+                            style={{ fontSize: "25px" }}
                             type="text"
-                            id="6"
-                            value={props.inspectValid}
-                            readOnly
+                            required="required"
+                            id="insepectionValidUntil"
                         />
                     </div>
+                    <button className="login-button">Add info</button>
                 </form>
-            </div>{/**/}
-            <CarCard/> 
+            </div>
+            {/**/}
+            <CarCard />
         </div>
     )
 }

@@ -28,14 +28,15 @@ function App() {
                 setAccount(account)
                 const provider = new ethers.providers.Web3Provider(ethereum) //read the Blockchain
                 const signer = provider.getSigner() //write the blockchain
-
+                const address = await signer.getAddress()
                 const contract = new ethers.Contract(
                     contractAddress,
                     abi,
                     signer
                 )
-                console.log(contract)
+                console.log("Metamask Connected : " + address)
                 setCar({ provider, signer, contract })
+                setIsConnected(true)
             } catch (err) {
                 console.error(err)
             }
@@ -51,7 +52,7 @@ function App() {
             {isConnected ? (
                 <Connected logout={handleLogOut} account={account} car={car} />
             ) : (
-                <Login connectWallet={connectToMetamask} />
+                <Login connectWallet={connectToMetamask} car={car} />
             )}
         </div>
     )
