@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"
-import "./Login.css"
+import "./CarCard.css"
 
 // const NavBarItem = ({ title, value }) => (
 //   <div className="couple-item">
@@ -9,77 +9,89 @@ import "./Login.css"
 // );
 
 const CarCard = (props) => {
-    const [blocks, setBlocks] = useState([])
-    const [formData, setFormData] = useState({
-        blockNumber: "",
-        timestamp: "",
-        transactions: "",
-        miner: "",
-        difficulty: "",
-    })
-
+    const [cars, setCar] = useState([])
+    const { contract } = props.car
     // useEffect(() => {
-    //     const memosMessage = async () => {
-    //         const memos = await contract.getMemos()
-    //         setMemos(memos)
-    //         //console.log(memos)
+    //     if (props.car != []) {
+    //         const message = async () => {
+    //             const carArray = await contract.getCar()
+    //             setCar(carArray)
+    //         }
+    //         contract && message()
     //     }
-    //     contract && memosMessage()
     // }, [contract])
 
-    const handleInputChange = (event) => {
-        const { name, value } = event.target
-        setFormData((prevFormData) => ({
-            ...prevFormData,
-            [name]: value,
-        }))
-    }
-
-    const handleAddRow = (e) => {
-        e.preventDefault()
-        setBlocks((prevBlocks) => [...prevBlocks, formData])
-        setFormData({
-            blockNumber: "",
-            timestamp: "",
-            transactions: "",
-            miner: "",
-            difficulty: "",
-        })
-    }
-
-    return (
+    return cars == [] ? (
         <div className="block-table-container">
             <h1
                 style={{
                     color: "black",
                     backgroundColor: "white",
-                    display: "in",
+                    display: "inline-block",
+                    padding: "5px",
+                    borderRadius: "5px",
                 }}
             >
                 Block explore
             </h1>
-            
+
             <table className="block-table">
                 <thead>
                     <tr>
-                        <th>Block id:</th>
-                        <th>Biển số xe:</th>
-                        <th>Năm sản xuất:</th>
-                        <th>Niêm hạn sử dụng:</th>
+                        <th>Block id</th>
+                        <th>Biển số xe</th>
+                        <th>Năm sản xuất</th>
+                        <th>Niêm hạn sử dụng</th>
                         <th>Loại xe:</th>
                         {/* Thêm các cột khác tùy theo yêu cầu */}
                     </tr>
                 </thead>
                 <tbody>
-                    {blocks.map((block, index) => (
+                    {cars.map((car, index) => (
                         <tr key={index}>
-                            <td>{block.blockNumber}</td>
-                            <td>{block.timestamp}</td>
-                            <td>{block.transactions}</td>
-                            <td>{block.miner}</td>
-                            <td>{block.difficulty}</td>
+                            <td>{car.blockNumber}</td>
+                            <td>{car.timestamp}</td>
+                            <td>{car.transactions}</td>
+                            <td>{car.miner}</td>
+                            <td>{car.difficulty}</td>
                         </tr>
                     ))}
+                </tbody>
+            </table>
+        </div>
+    ) : (
+        <div className="block-table-container">
+            <h1
+                style={{
+                    color: "black",
+                    backgroundColor: "white",
+                    display: "inline-block",
+                    padding: "5px",
+                    borderRadius: "5px",
+                }}
+            >
+                Block explore
+            </h1>
+
+            <table className="block-table">
+                <thead>
+                    <tr>
+                        <th>Block id</th>
+                        <th>Biển số xe</th>
+                        <th>Năm sản xuất</th>
+                        <th>Niêm hạn sử dụng</th>
+                        <th>Loại xe:</th>
+                        {/* Thêm các cột khác tùy theo yêu cầu */}
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{null}</td>
+                        <td>{null}</td>
+                        <td>{null}</td>
+                        <td>{null}</td>
+                        <td>{null}</td>
+                    </tr>
                 </tbody>
             </table>
         </div>

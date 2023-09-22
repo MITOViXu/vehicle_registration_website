@@ -62,11 +62,7 @@ const Login = (props) => {
                         />
                     </div>
 
-                    <button
-                        className="login-button"
-                    >
-                        Search Information
-                    </button>
+                    <button className="login-button">Search Information</button>
                 </form>
             </div>
 

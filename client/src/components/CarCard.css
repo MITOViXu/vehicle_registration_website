@@ -1,0 +1,38 @@
+.block-table-container {
+    padding: 20px;
+}
+
+.block-table {
+    border-collapse: collapse;
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden; /* Để ẩn đi các góc bên trong bảng */
+}
+
+.block-table th,
+.block-table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ccc;
+}
+
+.block-table th:first-child,
+.block-table td:first-child {
+    border-left: 1px solid #ccc;
+}
+
+.block-table th:last-child,
+.block-table td:last-child {
+    border-right: 1px solid #ccc;
+}
+
+.block-table th {
+    background-color: #f2f2f2;
+}
+
+.block-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+.block-table{
+  padding: 20px;
+}
