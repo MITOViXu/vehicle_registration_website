@@ -1,5 +1,5 @@
 //this file include the abi and contract address
-const contractAddress ="0x872b9e9218AeF2f3b129e0bA5590438C572b453A"
+const contractAddress ="0x07886b7bFfF8E081a3943D8d22fa7955D2bF885F"
 const abi = [
   {
     "inputs": [],
@@ -30,6 +30,71 @@ const abi = [
     ],
     "name": "NewUpdate",
     "type": "event"
+  },
+  {
+    "inputs": [],
+    "name": "getCar",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "string",
+            "name": "vehicleOwner",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "numberPlate",
+            "type": "string"
+          },
+          {
+            "internalType": "uint8",
+            "name": "yearManufac",
+            "type": "uint8"
+          },
+          {
+            "internalType": "uint8",
+            "name": "lifetimeLimit",
+            "type": "uint8"
+          },
+          {
+            "internalType": "string",
+            "name": "insepectionReportN",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "insepectionValidUntil",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "typeOf",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "mark",
+            "type": "string"
+          },
+          {
+            "internalType": "uint256",
+            "name": "modelCode",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "chassicNum",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct Lock.Vehicle[]",
+        "name": "",
+        "type": "tuple[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
   },
   {
     "inputs": [

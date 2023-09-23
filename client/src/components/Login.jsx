@@ -8,7 +8,7 @@ const Login = (props) => {
     const [provider, setProvider] = useState(null)
     const [account, setAccount] = useState(null)
     const [vehicleinfor, setVehicleinfor] = useState(null)
-    const [numberPlate, setNumberPlate] = useState("")
+    const [numberPlate, setNumberPlate] = useState('')
 
     //function get Vehicle info
     async function searchInfo(numberPlate) {
@@ -74,15 +74,12 @@ const Login = (props) => {
                             name="message"
                             placeholder="Biển số xe"
                             value={numberPlate}
-                            onChange={(e) => handleNumberPlateChange(e)}
+                            onChange={handleNumberPlateChange}                 
                         />
                     </div>
 
                     <button
                         className="login-button"
-                        // onClick={() => {
-                        //     searchInfo(numberPlate)
-                        // }}
                     >
                         Search Information
                     </button>
@@ -105,7 +102,6 @@ const Login = (props) => {
                                 readOnly
                             />
                         </div>
-
                         <div class="form-group">
                             <label for="name">Biển số xe</label>
                             <input
@@ -183,6 +179,7 @@ const Login = (props) => {
                                 value={vehicleinfor.insepectionReportN}
                                 readOnly
                             />
+                            
                         </div>
                         <div class="form-group">
                             <label for="name">Hiệu lực đến năm</label>

@@ -8,7 +8,7 @@ import Connected from './components/Connected';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
  <Router>
-  <Connected />
+  <App />
  </Router>
 );
 

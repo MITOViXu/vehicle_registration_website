@@ -52,19 +52,8 @@ function App() {
                 <Connected logout={handleLogOut} account={account} car={car} />
             ) : (
                 <Login connectWallet={connectToMetamask} />
-            )}
+            )}        
         </div>
     )
 }
-
 export default App
-// import React from 'react'
-// import CarCard from './components/CarCard'
-
-// const App = () => {
-//   return (
-//     <CarCard />
-//   )
-// }
-
-// export default App
