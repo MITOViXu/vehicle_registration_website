@@ -1,20 +1,17 @@
 import React, { useEffect, useState } from "react"
 import "./CarCard.css"
 
-
 const CarCard = (props) => {
     const [cars, setCar] = useState([])
     const { contract } = props.car
-    
-    // useEffect(() => {
-    //     if (props.car != []) {
-    //         const message = async () => {
-    //             const carArray = await contract.getCar()
-    //             setCar(carArray)
-    //         }
-    //         contract && message()
-    //     }
-    // }, [contract])
+
+    useEffect(() => {
+        const message = async () => {
+            const carArray = await contract.getCar()
+            setCar(carArray)
+        }
+        contract && message()
+    }, [contract])
 
     return cars == [] ? (
         <div className="block-table-container">
