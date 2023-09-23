@@ -4,31 +4,35 @@ import "./Login.css"
 import { useState, useEffect } from "react"
 import { abi, contractAddress } from "../constant/constant"
 import { ethers } from "ethers"
+
+
 const Login = (props) => {
-    const [provider, setProvider] = useState(null)
-    const [account, setAccount] = useState(null)
-    const [vehicleinfor, setVehicleinfor] = useState(null)
+    const [provider,setProvider] = useState(null)
+    const [vehicleinfor, setVehicleinfor] = useState([])
     const [numberPlate, setNumberPlate] = useState("")
+    const {contractInstance} = props.car
+
     async function handleNumberPlateChange(e) {
         setNumberPlate(e.target.value)
     }
-    
-    const handleSubmit = async (e) => {
-        e.preventDefault()
-        const provider = new ethers.providers.Web3Provider(window.ethereum)
-        setProvider(provider)
-        await provider.send("eth_requestAccounts", [])
-        const signer = provider.getSigner()
-        const contractInstance = new ethers.Contract(
-            contractAddress,
-            abi,
-            signer
-        )
-        const results = await contractInstance.getVehicleInfo(numberPlate)
-        setVehicleinfor(results)
-    }
-
-    return (
+        // const handleSubmit = async (e) => {
+        //     e.preventDefault()      
+        //     const results = await contractInstance.getVehicleInfo(numberPlate)
+        //     console.log(contractInstance)
+        //     setVehicleinfor(results)
+        // }   
+        const handleSubmit = async(e) =>{
+      const provider = new ethers.providers.Web3Provider(window.ethereum);
+      await provider.send("eth_requestAccounts", []);
+      const signer = provider.getSigner();
+      const contractInstance = new ethers.Contract (
+        contractAddress, abi, signer
+      );
+      const results = await contractInstance.getVehicleInfo(numberPlate)
+            console.log(contractInstance)
+            setVehicleinfor(results)
+        }
+    return (    
         <div className="login-container">
             <h1 style={{ marginBottom: "0px" }}>
                 <span className="colorful-text">

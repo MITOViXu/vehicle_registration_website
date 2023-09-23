@@ -5,9 +5,7 @@ import Login from "./components/Login"
 import Connected from "./components/Connected"
 import { contractAddress, abi } from "./constant/constant"
 function App() {
-    const [provider, setProvider] = useState(null)
     const [account, setAccount] = useState(null)
-    const [contractInstance, setcontractInstance] = useState(null)
     const [isConnected, setIsConnected] = useState(false)
     const [car, setCar] = useState({
         provider: null,
@@ -52,7 +50,7 @@ function App() {
             {isConnected ? (
                 <Connected logout={handleLogOut} account={account} car={car} />
             ) : (
-                <Login connectWallet={connectToMetamask} />
+                <Login connectWallet={connectToMetamask} car={car} />
             )}
         </div>
     )
