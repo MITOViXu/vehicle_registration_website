@@ -8,23 +8,7 @@ const Login = (props) => {
     const [provider, setProvider] = useState(null)
     const [account, setAccount] = useState(null)
     const [vehicleinfor, setVehicleinfor] = useState(null)
-    const [numberPlate, setNumberPlate] = useState('')
-
-    //function get Vehicle info
-    async function searchInfo(numberPlate) {
-        const provider = new ethers.providers.Web3Provider(window.ethereum)
-        setProvider(provider)
-        await provider.send("eth_requestAccounts", [])
-        const signer = provider.getSigner()
-        const address = await signer.getAddress()
-        const contractInstance = new ethers.Contract(
-            contractAddress,
-            abi,
-            signer
-        )
-        const results = await contractInstance.getVehicleInfo(numberPlate)
-        setVehicleinfor(results)
-    }
+    const [numberPlate, setNumberPlate] = useState("")
     async function handleNumberPlateChange(e) {
         setNumberPlate(e.target.value)
     }
@@ -80,6 +64,9 @@ const Login = (props) => {
 
                     <button
                         className="login-button"
+                        // onClick={() => {
+                        //     searchInfo(numberPlate)
+                        // }}
                     >
                         Search Information
                     </button>

@@ -1,3 +1,13 @@
+body{
+    padding: 10px;
+    height: 200vh;
+    background: linear-gradient(
+        90deg,
+        rgba(2, 0, 36, 1) 0%,
+        rgb(39, 85, 134) 38%,
+        rgb(0, 76, 91) 100%
+    );
+}
 .login-container {
     display: flex;
     flex-direction: column;
@@ -12,7 +22,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 200vh;
+    height: 80vh;
     background-image: url("./pic1.jpg");
     background-size: cover;
     background-position: right center;
@@ -48,13 +58,7 @@
     grid-template-rows: repeat(2, 1fr); 
     gap: 10px; 
 }
-.form-connected {
-    width: 1400px;
-    display: grid;
-    grid-template-columns: repeat(6, 1fr); 
-    grid-template-rows: repeat(2, 1fr); 
-    gap: 10px; 
-}
+
 .search-infor {
     border-radius: 10px;
     background-color: #f2f2f2;
@@ -66,7 +70,13 @@
     justify-content: center;
     height: 100vh;
 }
-
+.form-connected {
+    width: 1400px;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); 
+    grid-template-rows: repeat(2, 1fr); 
+    gap: 10px; 
+}
 .form {
     width: 400px;
     padding: 20px;
@@ -125,39 +135,3 @@ textarea {
 .logo-image {
     width: 100px;
 }
-
-.block-table-container {
-    padding: 20px;
-  }
-  
-  .block-table {
-    border-collapse: collapse;
-    width: 100%;
-    border-radius: 10px;
-    overflow: hidden; /* Để ẩn đi các góc bên trong bảng */
-  }
-  
-  .block-table th,
-  .block-table td {
-    padding: 10px;
-    text-align: left;
-    border-bottom: 1px solid #ccc;
-  }
-  
-  .block-table th:first-child,
-  .block-table td:first-child {
-    border-left: 1px solid #ccc;
-  }
-  
-  .block-table th:last-child,
-  .block-table td:last-child {
-    border-right: 1px solid #ccc;
-  }
-  
-  .block-table th {
-    background-color: #f2f2f2;
-  }
-  
-  .block-table tbody tr:nth-child(even) {
-    background-color: #f9f9f9;
-  }
