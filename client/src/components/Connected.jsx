@@ -68,15 +68,44 @@ const Connected = (props) => {
         window.location.reload()
     }
     return (
-        <div>
+        <div
+            style={{
+                padding: "10px",
+                height: "200vh",
+                background:
+                    "linear-gradient(                90deg,                rgba(2, 0, 36, 1) 0%,                rgb(39, 85, 134) 38%,                rgb(0, 76, 91) 100%            )",
+            }}
+        >
             <div className="login-container-connect">
-                <h1 style={{ marginBottom: "0px", backgroundColor: "whitesmoke", padding:"10px", borderRadius: "10px" }}>
+                <h1
+                    style={{
+                        marginBottom: "0px",
+                        backgroundColor: "whitesmoke",
+                        padding: "10px",
+                        borderRadius: "10px",
+                    }}
+                >
                     <span className="colorful-text">
                         Vehicle Registry Decentralized Application Connected
                     </span>
                 </h1>
-                <h5 className="welcome-section" style={{padding: "10px", color: "whitesmoke", backgroundColor: "black" }}>Welcome {props.account}</h5>
-                <h2 style={{padding: "10px", color: "whitesmoke", backgroundColor: "black" }}>
+                <h5
+                    className="welcome-section"
+                    style={{
+                        padding: "10px",
+                        color: "whitesmoke",
+                        backgroundColor: "black",
+                    }}
+                >
+                    Welcome {props.account}
+                </h5>
+                <h2
+                    style={{
+                        padding: "10px",
+                        color: "whitesmoke",
+                        backgroundColor: "black",
+                    }}
+                >
                     If you want to log out
                 </h2>
                 <button className="login-button" onClick={props.logout}>
@@ -173,11 +202,24 @@ const Connected = (props) => {
                                 id="insepectionValidUntil"
                             />
                         </div>
-                        <button style={{width: "100px", height: "50px", marginTop:"38px",  marginLeft:"38px", fontSize: "20px", color:"white", backgroundColor:"blue", cursor:"pointer"}}>Add info</button>
+                        <button
+                            style={{
+                                width: "100px",
+                                height: "50px",
+                                marginTop: "38px",
+                                marginLeft: "38px",
+                                fontSize: "20px",
+                                color: "white",
+                                backgroundColor: "blue",
+                                cursor: "pointer",
+                            }}
+                        >
+                            Add info
+                        </button>
                     </form>
                 </div>
             </div>
-            <CarCard car = {props.car} />
+            <CarCard car={props.car} />
         </div>
     )
 }
