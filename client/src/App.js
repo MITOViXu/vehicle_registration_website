@@ -52,7 +52,7 @@ function App() {
             {isConnected ? (
                 <Connected logout={handleLogOut} account={account} car={car} />
             ) : (
-                <Login connectWallet={connectToMetamask} car={car} />
+                <Login connectWallet={connectToMetamask} />
             )}
         </div>
     )
