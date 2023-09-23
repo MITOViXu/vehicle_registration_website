@@ -1,12 +1,5 @@
 body{
-    padding: 10px;
-    height: 200vh;
-    background: linear-gradient(
-        90deg,
-        rgba(2, 0, 36, 1) 0%,
-        rgb(39, 85, 134) 38%,
-        rgb(0, 76, 91) 100%
-    );
+
 }
 .login-container {
     display: flex;

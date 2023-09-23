@@ -1,5 +1,4 @@
 //this file include the abi and contract address
-const contractAddress = "0xA453bE3C48EC769105DDf760A7191730cE9D6CEE"
 const contractAddress ="0x07886b7bFfF8E081a3943D8d22fa7955D2bF885F"
 const abi = [
     {

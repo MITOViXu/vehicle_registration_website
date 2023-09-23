@@ -12,6 +12,7 @@ const Login = (props) => {
     async function handleNumberPlateChange(e) {
         setNumberPlate(e.target.value)
     }
+    
     const handleSubmit = async (e) => {
         e.preventDefault()
         const provider = new ethers.providers.Web3Provider(window.ethereum)
@@ -26,6 +27,7 @@ const Login = (props) => {
         const results = await contractInstance.getVehicleInfo(numberPlate)
         setVehicleinfor(results)
     }
+
     return (
         <div className="login-container">
             <h1 style={{ marginBottom: "0px" }}>
