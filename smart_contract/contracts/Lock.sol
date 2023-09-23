@@ -86,4 +86,7 @@ contract Lock{
        }
        revert("Can't found the vehicle");
     }
+      function getCar() public view returns (Vehicle[] memory) {
+        return vehicles;
+    }
 }
