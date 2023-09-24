@@ -16,7 +16,7 @@ body{
     flex-direction: column;
     align-items: center;
     height: 80vh;
-    background-image: url("./pic1.jpg");
+    background-image: url("./pic2.jpg");
     background-size: cover;
     background-position: right center;
     font-size: x-large;
@@ -80,6 +80,7 @@ body{
 
 .form-group {
     margin-bottom: 20px;
+    font-size: large;
 }
 label {
     display: block;

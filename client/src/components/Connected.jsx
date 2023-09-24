@@ -20,6 +20,7 @@ import CarCard from "./CarCard"
 const Connected = (props) => {
     const [provider, setProvider] = useState(null)
     const [account, setAccount] = useState(null)
+    
     const adminInsert = async (e) => {
         e.preventDefault()
         const { contract } = props.car
@@ -124,11 +125,11 @@ const Connected = (props) => {
                         </div>
                         <div class="form-group">
                             <label for="message">Nhập biển số xe:</label>
-                            <textarea
+                            <input
                                 style={{ fontSize: "25px" }}
                                 required="required"
                                 id="numberPlate"
-                            ></textarea>
+                            ></input>
                         </div>
                         <div class="form-group">
                             <label for="name">Năm sản xuất</label>
