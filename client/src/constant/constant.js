@@ -1,5 +1,5 @@
 //this file include the abi and contract address
-const contractAddress ="0x7fDe769aE40dBAB7238331fEeca8642C3A94fc3C"
+const contractAddress ="0xEDEF8C9149B94E4b8e61765964d14016f7f6a5B0"
 const abi =[
   {
     "inputs": [],
@@ -48,14 +48,14 @@ const abi =[
             "type": "string"
           },
           {
-            "internalType": "uint8",
+            "internalType": "uint16",
             "name": "yearManufac",
-            "type": "uint8"
+            "type": "uint16"
           },
           {
-            "internalType": "uint8",
+            "internalType": "uint16",
             "name": "lifetimeLimit",
-            "type": "uint8"
+            "type": "uint16"
           },
           {
             "internalType": "string",
@@ -119,14 +119,14 @@ const abi =[
             "type": "string"
           },
           {
-            "internalType": "uint8",
+            "internalType": "uint16",
             "name": "yearManufac",
-            "type": "uint8"
+            "type": "uint16"
           },
           {
-            "internalType": "uint8",
+            "internalType": "uint16",
             "name": "lifetimeLimit",
-            "type": "uint8"
+            "type": "uint16"
           },
           {
             "internalType": "string",
@@ -212,14 +212,14 @@ const abi =[
         "type": "string"
       },
       {
-        "internalType": "uint8",
+        "internalType": "uint16",
         "name": "YearManufac",
-        "type": "uint8"
+        "type": "uint16"
       },
       {
-        "internalType": "uint8",
+        "internalType": "uint16",
         "name": "LifetimeLimit",
-        "type": "uint8"
+        "type": "uint16"
       },
       {
         "internalType": "string",
@@ -278,14 +278,14 @@ const abi =[
         "type": "string"
       },
       {
-        "internalType": "uint8",
+        "internalType": "uint16",
         "name": "yearManufac",
-        "type": "uint8"
+        "type": "uint16"
       },
       {
-        "internalType": "uint8",
+        "internalType": "uint16",
         "name": "lifetimeLimit",
-        "type": "uint8"
+        "type": "uint16"
       },
       {
         "internalType": "string",
