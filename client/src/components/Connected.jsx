@@ -52,8 +52,8 @@ const Connected = (props) => {
         ).value
 
         const transaction = await contract.storeVehicle(
-            VehicleOwner,
             numberPlate,
+            VehicleOwner,
             yearManufac,
             lifetimeLimit,
             insepectionReportN,
