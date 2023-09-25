@@ -19,7 +19,6 @@ function App() {
                 const account = await ethereum.request({
                     method: "eth_requestAccounts",
                 })
-
                 window.ethereum.on("accountsChanged", () => {
                     window.location.reload()
                 })

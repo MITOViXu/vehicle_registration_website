@@ -5,6 +5,13 @@ import { useState, useEffect } from "react";
 import { abi, contractAddress } from "../constant/constant";
 import { ethers } from "ethers";
 
+import React from "react";
+import pic1 from "./pic1.jpg";
+import "./Login.css";
+import { useState, useEffect } from "react";
+import { abi, contractAddress } from "../constant/constant";
+import { ethers } from "ethers";
+
 const Login = (props) => {
   const [provider, setProvider] = useState(null);
   const [vehicleinfor, setVehicleinfor] = useState(null);
@@ -189,4 +196,4 @@ const handleSubmit = async (e) => {
   );
 };
 
-export default Login;
+export default Login
