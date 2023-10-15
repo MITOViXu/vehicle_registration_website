@@ -1,5 +1,9 @@
 //this file include the abi and contract address
+<<<<<<< HEAD
 const contractAddress ="0xEDEF8C9149B94E4b8e61765964d14016f7f6a5B0"
+=======
+const contractAddress ="0x426Ae45C7f3557f3e1C4144Ea6c85be292f7FDca"
+>>>>>>> 805f5574ffb7a4d850960a8bbe68b1037fc5f948
 const abi =[
   {
     "inputs": [],
