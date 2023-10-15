@@ -1,14 +1,14 @@
-import "./App.css";
-import React, { Fragment, useState, useEffect } from "react";
 import { ethers } from "ethers";
-import Navbar from "./components/NavBar/Navbar";
-import { contractAddress, abi } from "./constant/constant";
-import Routers from "./routers/Router";
-function App() {
+import React, { useState, useEffect } from "react";
+import { contractAddress, abi } from "../../constant/constant";
+import NotConnected from "../NotConnected/NotConnected";
+import Connected from "../Connected/Connected";
+const Admin = () => {
   const [provider, setProvider] = useState(null);
   const [account, setAccount] = useState(null);
   const [contractInstance, setcontractInstance] = useState(null);
   const [isConnected, setIsConnected] = useState(false);
+
   const [car, setCar] = useState({
     provider: null,
     signer: null,
@@ -44,23 +44,14 @@ function App() {
     setIsConnected(false);
   }
   return (
-    <Fragment>
-      <Navbar />
-      <div>
-        <Routers />
-      </div>
-    </Fragment>
+    <div>
+      {isConnected ? (
+        <Connected logout={handleLogOut} account={account} />
+      ) : (
+        <NotConnected connectWallet={connectToMetamask} />
+      )}
+    </div>
   );
-}
+};
 
-export default App;
-// import React from 'react'
-// import CarCard from './components/CarCard'
-
-// const App = () => {
-//   return (
-//     <CarCard />
-//   )
-// }
-
-// export default App
+export default Admin;
