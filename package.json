@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "@reduxjs/toolkit": "^1.9.7",
+    "bootstrap": "^5.3.2",
+    "react-slick": "^0.29.0",
+    "reactstrap": "^9.2.0",
+    "remixicon": "^3.5.0",
+    "slick-carousel": "^1.8.1"
+  }
+}

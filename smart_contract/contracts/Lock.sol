@@ -19,8 +19,8 @@ contract Lock {
     struct Vehicle {
         string vehicleOwner; // chủ xe (mã số CCCD)
         string numberPlate; // biển số xe
-        uint8 yearManufac; //năm sản xuất
-        uint8 lifetimeLimit; //niêm hạn sử dụng
+        uint16 yearManufac; //năm sản xuất
+        uint16 lifetimeLimit; //niêm hạn sử dụng
         string insepectionReportN; // số phiếu kiểm định
         string insepectionValidUntil; //hiệu lực đến nam
         string typeOf; //loại phương tiện
@@ -52,8 +52,8 @@ contract Lock {
     function storeVehicle(
         string memory NumberPlate,
         string memory VehicleOwner,
-        uint8 YearManufac,
-        uint8 LifetimeLimit,
+        uint16 YearManufac,
+        uint16 LifetimeLimit,
         string memory InsepectionReportN,
         string memory InsepectionValidUntil,
         string memory Typeof,
@@ -84,12 +84,12 @@ contract Lock {
     }
 
     function getVehicleInfo(
-        string memory NumberPlate
+        string memory Numberplate
     ) public view returns (Vehicle memory) {
         for (uint8 i = 0; i < vehicles.length; i++) {
             if (
                 keccak256(abi.encodePacked(vehicles[i].numberPlate)) ==
-                keccak256(abi.encodePacked(NumberPlate))
+                keccak256(abi.encodePacked(Numberplate))
             ) {
                 return vehicles[i];
             }
