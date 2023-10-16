@@ -44,16 +44,12 @@ function App() {
     setIsConnected(false);
   }
   return (
-    <Fragment>
+    <div>
       <Navbar />
-<<<<<<< HEAD
       <div>
         <Routers />
       </div>
-=======
-      <Home />
->>>>>>> bcd310aee89bf05ba4dcade1bc6b1ffaec8bf01e
-    </Fragment>
+    </div>
   );
 }
 export default App;
