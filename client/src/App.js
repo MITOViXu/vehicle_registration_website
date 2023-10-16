@@ -46,13 +46,7 @@ function App() {
   return (
     <Fragment>
       <Navbar />
-<<<<<<< HEAD
-      <div>
-        <Routers />
-      </div>
-=======
       <Home />
->>>>>>> bcd310aee89bf05ba4dcade1bc6b1ffaec8bf01e
     </Fragment>
   );
 }
