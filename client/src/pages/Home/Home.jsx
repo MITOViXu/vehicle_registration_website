@@ -1,8 +1,10 @@
 import React from "react";
-import "./Home.css";
+import './Home.css'
+import '../../components/FindCar/FindCar.jsx'
 import { useState, useEffect } from "react";
 import { abi, contractAddress } from "../../constant/constant";
 import { ethers } from "ethers";
+import FindCar from "../../components/FindCar/FindCar.jsx";
 
 const Home = (props) => {
   const [provider, setProvider] = useState(null);
@@ -53,39 +55,8 @@ const Home = (props) => {
     }
   };
   return (
-    <div className="login-container">
-      <h1 style={{ marginBottom: "0px" }}>
-        <span className="colorful-text">
-          Vehicle Registry Decentralized Application Login
-        </span>
-      </h1>
-      <h2 style={{ margin: "0px", color: "whitesmoke" }}>
-        If you are admin please login below
-      </h2>
-      <button className="login-button" onClick={props.connectWallet}>
-        Connect Metamask
-      </button>
-
-      <div className="find-car">
-        <form class="form" onSubmit={handleSubmit}>
-          <div class="form-group">
-            <label for="name">Nhập CCCD chủ xe:</label>
-            <input type="text" id="name" name="name" placeholder="CCCD" />
-          </div>
-          <div class="form-group">
-            <label for="message">Nhập biển số xe:</label>
-            <textarea
-              id="message"
-              name="message"
-              placeholder="Biển số xe"
-              //   value={numberPlate}
-              //   onChange={handleNumberPlateChange}
-            />
-          </div>
-
-          <button className="login-button">Search Information</button>
-        </form>
-      </div>
+    <div className="login-container-home">
+     <FindCar Submit={handleSubmit}/>
 
       {vehicleinfor == null ? (
         <div>
