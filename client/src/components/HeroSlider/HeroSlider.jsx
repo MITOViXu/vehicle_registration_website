@@ -12,18 +12,18 @@ const images = [slide1, slide2, slide3];
 const HeroSlider = () => {
   const settings = {
     dots: true,
+    fade: true,
+    autoplay: true,
     infinite: true,
     speed: 500,
     slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 2000,
+    slidesToScroll: 1
   };
 
   return (
     <Slider {...settings}>
       {images.map((image, i) => {
-        return <Image src={image} key={i} alt={image} preview={false} width="100%" />;
+        return <Image className="image_slide"  src={image} alt="" />
       })}
     </Slider>
   );
