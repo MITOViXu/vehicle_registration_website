@@ -4,6 +4,7 @@ import { ethers } from "ethers";
 import Navbar from "./components/NavBar/Navbar";
 import { contractAddress, abi } from "./constant/constant";
 import Routers from "./routers/Router";
+import Footer from "./components/Footer/Footer";
 function App() {
   const [provider, setProvider] = useState(null);
   const [account, setAccount] = useState(null);
@@ -44,7 +45,7 @@ function App() {
     setIsConnected(false);
   }
   return (
-    <div>
+    <div style={{padding:"0"}}>
       <Navbar />
       <div>
         <Routers />
