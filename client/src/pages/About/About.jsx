@@ -21,6 +21,18 @@ const About = () => {
           </div>
         </div>
       </div>
+
+      <div className="become-driver">
+        <div className="become-driver_img">
+          <img src={'toyota-offer-2.861de085d1c782df9e9d.png'} alt="car" />
+        </div>
+        <div className="become-driver_content">
+          <h2 className='section__title become__driver-title'>Do You Want to Earn With Us? So Don't Be Late</h2>
+          <button className='become_driver-btn'>Become a Driver</button>
+        </div>
+      </div>
+
+  
     </div>
  
   )
