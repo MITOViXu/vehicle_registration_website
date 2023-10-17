@@ -1,6 +1,7 @@
 import "./App.css";
 import React, { Fragment, useState, useEffect } from "react";
 import { ethers } from "ethers";
+
 import Navbar from "./components/NavBar/Navbar";
 import { contractAddress, abi } from "./constant/constant";
 import Routers from "./routers/Router";
@@ -44,12 +45,12 @@ function App() {
     setIsConnected(false);
   }
   return (
-    <div>
+    <Fragment>
       <Navbar />
       <div>
         <Routers />
       </div>
-    </div>
+    </Fragment>
   );
 }
 export default App;

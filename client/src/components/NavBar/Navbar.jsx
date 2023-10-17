@@ -24,7 +24,7 @@ const Navbar = () => {
   return (
     //className="navigation__wrapper d-flex align-items-center justify-content-between"
 
-    <div className="main_navbar">
+    <div className="main_navbar" style={{position:"fixed", right:"0", left:"0", top:"0", zIndex:"10000"}}>
       {/* <span className="mobile__menu">
         <i class="ri-menu-line" onClick={toggleMenu}></i>
       </span> */}
@@ -45,11 +45,11 @@ const Navbar = () => {
         </div>
       </div>
 
-      <div className="nav__right">
-        <div className="search__box">
+      <div>
+        <div>
           <input type="text" placeholder="Search" />
           <span>
-            <i class="ri-search-line"></i>
+            <i></i>
           </span>
         </div>
       </div>

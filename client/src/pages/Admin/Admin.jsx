@@ -44,7 +44,7 @@ const Admin = () => {
     setIsConnected(false);
   }
   return (
-    <div>
+    <div style={{marginTop:"70px"}}>
       {isConnected ? (
         <Connected logout={handleLogOut} account={account} />
       ) : (

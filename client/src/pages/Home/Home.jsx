@@ -55,7 +55,7 @@ const Home = (props) => {
     }
   };
   return (
-    <div className="login-container-home">
+    <div className="login-container-home"  style={{marginTop:"70px"}}>
      <FindCar Submit={handleSubmit}/>
 
       {vehicleinfor == null ? (
