@@ -1,10 +1,10 @@
 import "./App.css";
 import React, { Fragment, useState, useEffect } from "react";
 import { ethers } from "ethers";
-
 import Navbar from "./components/NavBar/Navbar";
 import { contractAddress, abi } from "./constant/constant";
 import Routers from "./routers/Router";
+import Footer from "./components/Footer/Footer";
 function App() {
   const [provider, setProvider] = useState(null);
   const [account, setAccount] = useState(null);
@@ -45,12 +45,12 @@ function App() {
     setIsConnected(false);
   }
   return (
-    <Fragment>
+    <div style={{padding:"0"}}>
       <Navbar />
       <div>
         <Routers />
       </div>
-    </Fragment>
+    </div>
   );
 }
 export default App;
