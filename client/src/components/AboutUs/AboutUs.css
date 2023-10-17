@@ -1,0 +1,39 @@
+.About-us{
+  background-color: white;
+  height: 430px;
+  display: flex;
+  padding: 30px 130px;
+}
+.About-infor{
+  flex:1.2;
+}
+.About-infor-pic{
+  width: 100%;
+  flex:1;
+  background-image:url('../../assets/bmw.jpg');
+  background-size: cover;
+}
+.icon-container {
+  display: flex;
+  align-items: center;
+}
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 12px;
+  height: 12px;
+  background-color: #cab813;
+  opacity: 0.9;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+.icon i {
+  color: white;
+}
+.text {
+  font-size: 13px;
+  font-weight: bold;
+  margin:8px;
+  padding:10px
+}

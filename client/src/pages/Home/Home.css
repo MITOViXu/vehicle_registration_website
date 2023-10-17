@@ -1,14 +1,12 @@
 body{
 
 }
-
 .login-container-home{
     display: flex;
     flex-direction: column;
     align-items: center;
     height: 100vh;
-    background-image: url("../../assets/pic1.jpg");
-    background-size: cover;
+    background-color: white;
     background-position: right center;
     font-size: x-large;
 }
@@ -17,7 +15,7 @@ body{
     flex-direction: column;
     align-items: center;
     height: 80vh;
-    background-image: url("../../assets/pic1.jpg");
+    background-color: white;
     background-size: cover;
     background-position: right center;
     font-size: x-large;
