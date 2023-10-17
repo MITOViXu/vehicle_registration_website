@@ -30,7 +30,7 @@ body{
     display: flex;
     align-items: center; 
     justify-content: center;
-    height: 30vh;
+    height: 25vh;
     border-radius: 2px;
 }
 .find-car-pic{

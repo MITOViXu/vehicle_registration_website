@@ -4,6 +4,8 @@ import { ethers } from "ethers";
 import Navbar from "./components/NavBar/Navbar";
 import { contractAddress, abi } from "./constant/constant";
 import Routers from "./routers/Router";
+import Home from "./pages/Home/Home";
+
 function App() {
   const [provider, setProvider] = useState(null);
   const [account, setAccount] = useState(null);
@@ -44,10 +46,12 @@ function App() {
     setIsConnected(false);
   }
   return (
-    <Fragment>
+    <div>
       <Navbar />
-      <Home />
-    </Fragment>
+      <div>
+        <Routers />
+      </div>
+    </div>
   );
 }
 export default App;
