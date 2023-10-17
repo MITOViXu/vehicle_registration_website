@@ -1,0 +1,49 @@
+.about_container {
+    display: flex;
+    justify-content: center;
+}
+
+.about_page-section {
+    display: flex;
+    width: 1260px;
+    height: 425px;
+}
+
+.safe-ride-text {
+    padding-left: 25px;
+}
+
+.page-about_img img {
+    width: 630px;
+    height: 400px;
+    border-radius: 10px;
+}
+
+.section_description {
+    line-height: 32px;
+    font-size: 0.9rem;
+    color: #7c8a97;
+}
+
+.about_questions {
+    display: flex;
+    align-items: center;
+}
+
+.about_questions img {
+    width: 20px;
+    height: 20px;
+    margin: 20px; 
+}
+
+.section-subtitle {
+    color: #f9a826;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.about_questions {
+    font-size: calc(1.275rem + .3vw);
+    font-weight: 500;
+    line-height: 1.2;
+}
