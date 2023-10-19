@@ -1,27 +1,4 @@
-body{
 
-}
-
-.login-container-home{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 100vh;
-    background-image: url("../../assets/pic1.jpg");
-    background-size: cover;
-    background-position: right center;
-    font-size: x-large;
-}
-.login-container-connect{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 80vh;
-    background-image: url("../../assets/pic1.jpg");
-    background-size: cover;
-    background-position: right center;
-    font-size: x-large;
-}
 .find-car-home{
     box-shadow: #f2f2f2;
     padding-left: 10px;
@@ -30,7 +7,7 @@ body{
     display: flex;
     align-items: center; 
     justify-content: center;
-    height: 25vh;
+    height: 31vh;
     border-radius: 2px;
 }
 .find-car-pic{

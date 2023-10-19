@@ -8,7 +8,7 @@ const NotConnected = (props) => {
   document.title = "Admin Car";
 
   return (
-    <div>
+    <div style={{marginTop:"70px"}}>
       <div className="connect_div">
         <div className="connect_intro">
           <img className="connect_intro_logo" src={carLogo} alt="" />
@@ -19,11 +19,11 @@ const NotConnected = (props) => {
           </p>
         </div>
         <di className="connect_middle">
-          <h1 className="connect_middle_title">Chào mừng quản ban quản trị viên</h1>
+          <h1 className="connect_middle_title">Trang web dành cho quản trị</h1>
           <img className="connect_middle_logo" src={admin} alt="" />
         </di>
         <button className="login" onClick={props.connectWallet}>
-          Kết nối ví MetaMask
+          Xác minh Tài khoản
         </button>
       </div>
       {/* ============= hero section =========== */}

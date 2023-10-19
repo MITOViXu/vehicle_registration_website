@@ -46,7 +46,7 @@ function App() {
     setIsConnected(false);
   }
   return (
-    <div>
+    <div style={{padding:"0"}}>
       <Navbar />
       <div>
         <Routers />
