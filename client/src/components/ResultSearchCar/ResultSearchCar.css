@@ -1,65 +1,31 @@
-
-
-.form-home{
-    width: 100%;
-    background-color: white;
-    border-radius: 5px;
+.ResultCar{
+    display: flex;
+    justify-content: center;
+    padding: 25px;
 }
-
 .information-car {
-    background-color: #f2f2f2;
-    width: 1400px;
+    text-align: center;
+    background-color: #44cec7;
+    width: 90%;
     display: grid;
     padding: 20px;
-    background-color: #f2f2f2;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     grid-template-columns: repeat(5, 1fr); /* 5 cột */
     grid-template-rows: repeat(2, 1fr); /* 2 hàng */
     gap: 10px; /* Khoảng cách giữa các div con */
 }
-.information-car-connected{
-    background-color: #f2f2f2;
-    width: 1400px;
-    height: 30vh;
-    display: grid;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    grid-template-columns: repeat(6, 1fr); 
-    grid-template-rows: repeat(2, 1fr); 
-    gap: 10px; 
-}
-
 .search-infor {
     width: 800px;
     border-radius: 10px;
     background-color: white;
     padding: 20px;
 }
-.container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-}
-.form-connected {
-    width: 1400px;
-    display: grid;
-    grid-template-columns: repeat(6, 1fr); 
-    grid-template-rows: repeat(2, 1fr); 
-    gap: 10px; 
-}
-.form-group-home {
-    margin-bottom: 20px;
-    font-size: large;
-}
 label {
     display: block;
     font-weight: bold;
     margin-bottom: 5px;
 }
-
 input,
 textarea {
     width: 95%;
@@ -67,19 +33,3 @@ textarea {
     border: 1px solid #ccc;
     border-radius: 4px;
 }
-.logo-image {
-    width: 100px;
-}
-.login-button-home {
-    background-color: #007bff;
-    color: #fff;
-    font-size: 1rem;
-    border: none;
-    border-radius: 0.3rem;
-    padding: 1rem 2rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  .login-button-home:hover {
-    background-color: #0069d9;
-  }
