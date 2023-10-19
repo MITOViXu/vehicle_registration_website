@@ -9,6 +9,8 @@ import slide3 from "../../assets/slider-img/slider-3.jpg";
 import "./HeroSlider.css";
 import "./HeroSlider";
 import { Container } from "reactstrap";
+
+
 const images = [slide1, slide2, slide3];
 const HeroSlider = () => {
   const settings = {

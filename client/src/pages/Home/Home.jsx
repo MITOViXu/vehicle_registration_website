@@ -1,14 +1,14 @@
 import React from "react";
-import './Home.css'
-import '../../components/FindCar/FindCar.jsx'
+import "./Home.css";
+import "../../components/FindCar/FindCar.jsx";
 import { useState, useEffect } from "react";
 import { abi, contractAddress } from "../../constant/constant";
 import { ethers } from "ethers";
 import FindCar from "../../components/FindCar/FindCar.jsx";
-import '../../components/HeroSlider/HeroSlider.jsx';
-import '../../components/AboutUs/AboutUs.jsx';
-import ResultSearchCar from "../../components/ResultSearchCar/ResultSearchCar";
+import SliderAnimate from "../../components/SliderAnimate/SliderAnimate";
+import ResultSearchCar from "../../components/ResultSearchCar/ResultSearchCar.jsx";
 import AboutUs from "../../components/AboutUs/AboutUs.jsx";
+import HersoSlider from "../../components/HeroSlider/HeroSlider.jsx";
 
 const Home = (props) => {
   const [provider, setProvider] = useState(null);
@@ -60,19 +60,21 @@ const Home = (props) => {
   };
   return (
     <div>
-    <div className="login-container-home">
-     <FindCar Submit={handleSubmit}/>
-      {/* {vehicleinfor == null ? (
-        <div>
-          <h1>
-            <span style={{}}>You didn't search yet</span>
-          </h1>
-        </div>
-      ) : (
-      <ResultSearchCar vehicleinfor={vehicleinfor} />
-      )} */}
-      <AboutUs />
-    </div>
+      <HersoSlider />
+      <div className="home" style={{ marginTop: "70px" }}>
+        <div className="HeroSlider"></div>
+        <div className="FindCar"><FindCar Submit={handleSubmit} /></div>
+        <div className="ResultSearchCar"><ResultSearchCar /></div>
+        <div className="AboutUs"><AboutUs /></div>
+        {/* {vehicleinfor == null ? (
+          <div>
+          
+          </div>
+        ) : (
+        <div className="ResultSearchCar"><ResultSearchCar /></div>
+        )} */}
+      </div>
+      <SliderAnimate />
     </div>
   );
 };

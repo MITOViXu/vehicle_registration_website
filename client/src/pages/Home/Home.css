@@ -1,59 +1,20 @@
 body{
 
 }
-.login-container-home{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 100vh;
-    background-color: white;
-    background-position: right center;
-    font-size: x-large;
-}
-.login-container-connect{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 80vh;
-    background-color: white;
-    background-size: cover;
-    background-position: right center;
-    font-size: x-large;
-}
-.find-car-home{
-    box-shadow: #f2f2f2;
-    padding-left: 10px;
-    background-color: white;
-    width: 80%;
-    display: flex;
-    align-items: center; 
-    justify-content: center;
-    height: 30vh;
-    border-radius: 2px;
-}
-.find-car-pic{
-    height: 100%;
-    flex: 1;
-    background: linear-gradient(rgb(249, 168, 38, 0.9), rgb(249, 168, 38, 0.9)),
-    url("../../assets/pic3.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    padding: 65px 35px; 
-}
-.find-car-infor{
-    padding-left: 20px;
-    flex: 3;
-    background-color: white;
-    border-radius: 5px;
+.home{
     
-}
-.form-home{
-    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 120vh;
     background-color: white;
-    border-radius: 5px;
 }
-
+.FindCar{
+    padding-left: 100px;
+    width: 100%;
+    text-align: center;
+    padding-bottom: 30px;
+}
 .information-car {
     background-color: #f2f2f2;
     width: 1400px;
@@ -77,19 +38,6 @@ body{
     grid-template-columns: repeat(6, 1fr); 
     grid-template-rows: repeat(2, 1fr); 
     gap: 10px; 
-}
-
-.search-infor {
-    width: 800px;
-    border-radius: 10px;
-    background-color: white;
-    padding: 20px;
-}
-.container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
 }
 .form-connected {
     width: 1400px;

@@ -1,8 +1,10 @@
 import React from 'react'
 import "./ResultSearchCar.css"
+
 const ResultSearchCar = (vehicleinfor) => {
   return (
-    <div className="information-car">
+    <div className="ResultCar">
+        <div className="information-car">
           <div class="form-group">
             <label for="name">Thông tin chủ xe</label>
             <input
@@ -84,7 +86,8 @@ const ResultSearchCar = (vehicleinfor) => {
               readOnly
             />
           </div>
-        </div>
+    </div>
+    </div>
   )
 }
 

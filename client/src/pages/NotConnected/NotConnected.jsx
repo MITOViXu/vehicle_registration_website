@@ -23,7 +23,7 @@ const NotConnected = (props) => {
           <img className="connect_middle_logo" src={admin} alt="" />
         </di>
         <button className="login" onClick={props.connectWallet}>
-          Kết nối ví MetaMask
+          Xác minh Tài khoản
         </button>
       </div>
       {/* ============= hero section =========== */}
