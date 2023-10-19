@@ -1,0 +1,90 @@
+.footer_container {
+    padding-top: 56px;
+    padding-bottom: 40px;
+    padding-left: 196px;
+    padding-right: 196px;
+    background-color: #000d6b;
+    color: rgba(255, 255, 255, 0.715);
+    font-family: "Source Sans Pro", sans-serif;
+}
+
+
+.container_1 {
+    display: flex;
+}
+
+.footer_header-content {
+    display: flex;
+    align-items: center;
+    line-height: 24px;
+    color: #ffff;
+    font-size: 1.25rem;
+    font-weight: 500;
+    width: 150px;
+}
+
+.rent-car{
+    width: 390px;
+    margin-right: 56px;
+}
+
+.rent-car img {
+    width: 36px;
+    height: 33px;
+    filter: invert(100%);
+}
+
+.rent-car_header {
+    font-size: 1.5rem;
+    margin-left:  14px;
+}
+
+#rent-car-content{
+    line-height: 30px;
+    font-weight: 500;
+}
+
+.quick-links{
+    margin-right: 120px;
+}
+
+.footer_content{
+    margin-top: 30px;
+    line-height: 40px;
+   
+    font-weight: 300;
+}
+
+#quick-links {
+    transition: 0.3s;
+}
+
+#quick-links:hover {
+    color: #fd7e14;
+    cursor: pointer;
+}   
+
+
+
+.head-office{
+    margin-right: 104px;
+}
+
+.copyright {
+    
+}
+
+.copyright_info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:0.25rem;
+    font-size: 0.9rem;
+    color: #7c8a97;
+}
+
+.copyright_info img{
+    width: 10px;
+    height: 10px;
+    filter: invert(100%);
+}

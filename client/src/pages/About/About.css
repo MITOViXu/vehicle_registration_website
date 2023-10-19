@@ -19,7 +19,7 @@
 }
 
 .section_description {
-    line-height: 32px;
+    line-height: 28px;
     font-size: 0.9rem;
     color: #7c8a97;
 }
@@ -33,6 +33,12 @@
     width: 20px;
     height: 20px;
     margin: 20px; 
+}
+
+.section-title {
+    font-size: 2rem;
+    font-family: sans-serif;
+    font-weight: 600;
 }
 
 .section-subtitle {
@@ -59,5 +65,28 @@
 .become-driver_img img {
     scale: 1.6;
     padding: 64px 130px;
+}
+
+.become_driver-title {
+    font-size: 2.8rem;
+    color: #fff;
+    line-height: 65px;
+    font-weight: 600;
+}
+
+.become_driver-btn {
+    background: #fff;
+    color: #000d6b;
+    font-weight: 600;
+    padding: 6px 12px;
+    border-radius: 6px;
+    margin-top: 10px;
+    border: none;
+    transition: 0.5s;
+}
+
+.become_driver-btn:hover {
+    cursor: pointer;
+    background-color: rgb(0, 13, 107, 0.9);
 }
 

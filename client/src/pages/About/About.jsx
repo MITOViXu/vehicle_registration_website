@@ -1,5 +1,6 @@
 import React from 'react'
 import './About.css'
+import Footer from '../../components/Footer/Footer'
 
 const About = () => {
   return (
@@ -27,12 +28,12 @@ const About = () => {
           <img src={'toyota-offer-2.861de085d1c782df9e9d.png'} alt="car" />
         </div>
         <div className="become-driver_content">
-          <h2 className='section__title become__driver-title'>Do You Want to Earn With Us? So Don't Be Late</h2>
+          <h2 className='become_driver-title'>Do You Want to Earn With Us? So Don't Be Late</h2>
           <button className='become_driver-btn'>Become a Driver</button>
         </div>
       </div>
 
-  
+      <Footer></Footer>
     </div>
  
   )
