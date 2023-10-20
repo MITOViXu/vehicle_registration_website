@@ -1,10 +1,16 @@
 import React from 'react'
 import './About.css'
-import Footer from '../../components/Footer/Footer'
+import Footer from '../../components/Footer/Footer.jsx'
+import AboutUs from "../../components/AboutUs/AboutUs.jsx";
+import HeroSlider from '../../components/HeroSlider/HeroSlider';
+import SliderAnimate from '../../components/SliderAnimate/SliderAnimate.jsx'
 
 const About = () => {
   return (
-    <div className='about_container'>
+    <div>
+      <div className="about_container">
+      <div className="HeroSlider"> <HeroSlider /></div>
+      <div className="AboutUs"><AboutUs /></div>
       <div className="about_page-section">
         <div className="page-about_img">
           <img src={'drive.b72e6f2d1ccdbd6550a9.jpg'} alt="safe-ride-solution" />
@@ -17,7 +23,7 @@ const About = () => {
             <img src={'telephone.png'} alt="phone" />
             <div className="about_question-content">
               <div className="section-subtitle">Need Any Help?</div>
-              <h4>+00123456789</h4>
+              <h4>+0942917989</h4>
             </div>
           </div>
         </div>
@@ -32,10 +38,10 @@ const About = () => {
           <button className='become_driver-btn'>Become a Driver</button>
         </div>
       </div>
-
-      <Footer></Footer>
     </div>
- 
+    <div className="Footer"><Footer></Footer></div>
+    <div className="SliderAnimate"><SliderAnimate /></div>
+    </div>
   )
 }
 

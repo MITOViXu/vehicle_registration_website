@@ -9,6 +9,7 @@ import SliderAnimate from "../../components/SliderAnimate/SliderAnimate";
 import ResultSearchCar from "../../components/ResultSearchCar/ResultSearchCar.jsx";
 import AboutUs from "../../components/AboutUs/AboutUs.jsx";
 import HersoSlider from "../../components/HeroSlider/HeroSlider.jsx";
+import Footer from "../../components/Footer/Footer.jsx";
 
 const Home = (props) => {
   const [provider, setProvider] = useState(null);
@@ -75,6 +76,7 @@ const Home = (props) => {
         )} */}
       </div>
       <SliderAnimate />
+      <div> <Footer /></div>
     </div>
   );
 };

@@ -3,6 +3,8 @@ import React, { useState, useEffect } from "react";
 import { contractAddress, abi } from "../../constant/constant";
 import NotConnected from "../NotConnected/NotConnected";
 import Connected from "../Connected/Connected";
+import Footer from "../../components/Footer/Footer";
+
 const Admin = () => {
   const [provider, setProvider] = useState(null);
   const [account, setAccount] = useState(null);

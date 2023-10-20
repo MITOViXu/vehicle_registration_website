@@ -4,6 +4,7 @@ import carLogo from "../../assets/carLogo.png";
 import location from "../../assets/location.png";
 import admin from "../../assets/admin.png";
 import HeroSlider from "../../components/HeroSlider/HeroSlider";
+import { Footer } from "antd/es/layout/layout";
 const NotConnected = (props) => {
   document.title = "Admin Car";
 
