@@ -5,7 +5,7 @@ import Navbar from "./components/NavBar/Navbar";
 import { contractAddress, abi } from "./constant/constant";
 import Routers from "./routers/Router";
 import Home from "./pages/Home/Home";
-
+import Footer from "./components/Footer/Footer";
 function App() {
   const [provider, setProvider] = useState(null);
   const [account, setAccount] = useState(null);
@@ -51,6 +51,7 @@ function App() {
       <div>
         <Routers />
       </div>
+      <Footer />
     </div>
   );
 }

@@ -39,79 +39,81 @@ const SliderAnimate = () => {
   };
 
   return (
-    <Slider {...settings}>
-      <div className="testimonial py-4 px-3">
-        <p className="section__description">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus magni
-          explicabo molestias recusandae repudiandae, dolor, sapiente placeat
-          ab, animi eum minima nulla facere aliquam aut vitae quo pariatur
-          voluptate odit?
-        </p>
+    <div style={{marginLeft:"15%", marginRight:"15%"}}>
+      <Slider {...settings}>
+        <div className="testimonial py-4 px-3">
+          <p className="section__description">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus
+            magni explicabo molestias recusandae repudiandae, dolor, sapiente
+            placeat ab, animi eum minima nulla facere aliquam aut vitae quo
+            pariatur voluptate odit?
+          </p>
 
-        <div className="mt-3 d-flex align-items-center gap-4">
-          <img src={ava01} alt="" className="w-25 h-25 rounded-2" />
+          <div className="mt-3 d-flex align-items-center gap-4">
+            <img src={ava01} alt="" className="w-25 h-25 rounded-2" />
 
-          <div>
-            <h6 className="mb-0 mt-3">Jhon Doe</h6>
-            <p className="section__description">Customer</p>
+            <div>
+              <h6 className="mb-0 mt-3">Jhon Doe</h6>
+              <p className="section__description">Customer</p>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div className="testimonial py-4 px-3">
-        <p className="section__description">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus magni
-          explicabo molestias recusandae repudiandae, dolor, sapiente placeat
-          ab, animi eum minima nulla facere aliquam aut vitae quo pariatur
-          voluptate odit?
-        </p>
+        <div className="testimonial py-4 px-3">
+          <p className="section__description">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus
+            magni explicabo molestias recusandae repudiandae, dolor, sapiente
+            placeat ab, animi eum minima nulla facere aliquam aut vitae quo
+            pariatur voluptate odit?
+          </p>
 
-        <div className="mt-3 d-flex align-items-center gap-4">
-          <img src={ava02} alt="" className="w-25 h-25 rounded-2" />
+          <div className="mt-3 d-flex align-items-center gap-4">
+            <img src={ava02} alt="" className="w-25 h-25 rounded-2" />
 
-          <div>
-            <h6 className="mb-0 mt-3">Jhon Doe</h6>
-            <p className="section__description">Customer</p>
+            <div>
+              <h6 className="mb-0 mt-3">Jhon Doe</h6>
+              <p className="section__description">Customer</p>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div className="testimonial py-4 px-3">
-        <p className="section__description">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus magni
-          explicabo molestias recusandae repudiandae, dolor, sapiente placeat
-          ab, animi eum minima nulla facere aliquam aut vitae quo pariatur
-          voluptate odit?
-        </p>
+        <div className="testimonial py-4 px-3">
+          <p className="section__description">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus
+            magni explicabo molestias recusandae repudiandae, dolor, sapiente
+            placeat ab, animi eum minima nulla facere aliquam aut vitae quo
+            pariatur voluptate odit?
+          </p>
 
-        <div className="mt-3 d-flex align-items-center gap-4">
-          <img src={ava03} alt="" className="w-25 h-25 rounded-2" />
+          <div className="mt-3 d-flex align-items-center gap-4">
+            <img src={ava03} alt="" className="w-25 h-25 rounded-2" />
 
-          <div>
-            <h6 className="mb-0 mt-3">Jhon Doe</h6>
-            <p className="section__description">Customer</p>
+            <div>
+              <h6 className="mb-0 mt-3">Jhon Doe</h6>
+              <p className="section__description">Customer</p>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div className="testimonial py-4 px-3">
-        <p className="section__description">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus magni
-          explicabo molestias recusandae repudiandae, dolor, sapiente placeat
-          ab, animi eum minima nulla facere aliquam aut vitae quo pariatur
-          voluptate odit?
-        </p>
+        <div className="testimonial py-4 px-3">
+          <p className="section__description">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus
+            magni explicabo molestias recusandae repudiandae, dolor, sapiente
+            placeat ab, animi eum minima nulla facere aliquam aut vitae quo
+            pariatur voluptate odit?
+          </p>
 
-        <div className="mt-3 d-flex align-items-center gap-4">
-          <img src={ava04} alt="" className="w-25 h-25 rounded-2" />
+          <div className="mt-3 d-flex align-items-center gap-4">
+            <img src={ava04} alt="" className="w-25 h-25 rounded-2" />
 
-          <div>
-            <h6 className="mb-0 mt-3">Jhon Doe</h6>
-            <p className="section__description">Customer</p>
+            <div>
+              <h6 className="mb-0 mt-3">Jhon Doe</h6>
+              <p className="section__description">Customer</p>
+            </div>
           </div>
         </div>
-      </div>
-    </Slider>
+      </Slider>
+    </div>
   );
 };
 
