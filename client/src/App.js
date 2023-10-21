@@ -48,7 +48,7 @@ function App() {
   return (
     <div style={{padding:"0"}}>
       <Navbar />
-      <div>
+      <div className="body">
         <Routers />
       </div>
       <Footer />
