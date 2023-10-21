@@ -2,12 +2,14 @@
     display: flex;
     justify-content: center;
     padding: 25px;
+    height: 20rem;
+    width: 100rem;
 }
 .information-car {
     text-align: center;
     background-color: #44cec7;
-    width: 90%;
-    display: grid;
+    width: 80rem;
+    display: flex;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -33,3 +35,4 @@ textarea {
     border: 1px solid #ccc;
     border-radius: 4px;
 }
+
