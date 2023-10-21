@@ -45,17 +45,18 @@
 }
 
 .quick-links{
-    margin-right: 120px;
+    margin-right: 20px;
 }
 
 .footer_content{
     margin-top: 30px;
     line-height: 40px;
-   
+    font-size: 1rem;
     font-weight: 300;
 }
 
 #quick-links {
+    display: table;
     transition: 0.3s;
 }
 
@@ -70,9 +71,34 @@
     margin-right: 104px;
 }
 
-.copyright {
-    
+.input_container{
+    display: flex;
+    align-items: center;
+    padding-right: 10px;
+    padding-left: 10px;
+    background-color: #020a4de9;
+    border-radius: 30px;
 }
+
+.email_input {
+    border: none;
+    outline: none;
+    color: #ffff;
+    width: 280px;
+    background-color: transparent;
+}
+
+.btn_input{
+    background-image: url(../../../public/send.png);
+    filter: invert(100%);
+    background-repeat: no-repeat;
+    background-color: transparent;
+    width: 20px;
+    height: 20px;
+    background-size: contain;
+    border: none;
+}
+
 
 .copyright_info {
     display: flex;
@@ -88,3 +114,4 @@
     height: 10px;
     filter: invert(100%);
 }
+
