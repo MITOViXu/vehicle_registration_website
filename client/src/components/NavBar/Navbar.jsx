@@ -24,7 +24,7 @@ const Navbar = () => {
   return (
     //className="navigation__wrapper d-flex align-items-center justify-content-between"
     
-    <div className="main_navbar" style={{position:"fixed", right:"0", left:"0", top:"0", zIndex:"10000"}}>
+    <div className="main_navbar" style={{position:"absolute", right:"0", left:"0", top:"0", zIndex:"10000"}}>
 
       <div className="topbar">
 
