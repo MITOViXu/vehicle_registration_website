@@ -19,8 +19,8 @@ import { abi, contractAddress } from "../../constant/constant";
 import { ethers } from "ethers";
 import admin from "../../assets/admin.png";
 import CarCard from "../../components/CarCard/CarCard";
+import Footer from "../../components/Footer/Footer";
 const Connected = (props) => {
-
   const settings = {
     fade: true,
     speed: 2000,
@@ -84,162 +84,163 @@ const Connected = (props) => {
   };
 
   return (
-    <div
-      style={{
-        padding: "10px",
-        height: "500vh",
-        overflow:"hidden",
-        background:
-          "linear-gradient(90deg,rgba(2, 0, 36, 1) 0%,rgb(39, 85, 134) 38%,rgb(0, 76, 91) 100%)",
-      }}
-    >
-      <Slider {...settings} className="slider">
-        <div
-          style={{ display: "flex", justifyContent: "center", margin: "20px" }}
-          className="admin-intro-1"
-        >
-          <div className="login-connected">
-            <img src={admin} className="ad-avatar" alt="admin" />
-            <div>
-              <p className="admin-account">Chào mừng quản trị viên </p>
-            </div>
-          </div>
-          <div className="box-address">
-            <p className="admin-address">{props.account}</p>
-            <button className="logout_button" onClick={props.logout}>
-              Đăng xuất
-            </button>
-          </div>
-        </div>
-        <div
-          style={{ display: "flex", justifyContent: "center", margin: "20px" }}
-          className="admin-intro-2"
-        >
-          <div className="login-connected">
-            <img src={admin} className="ad-avatar" alt="admin" />
-            <div>
-              <p className="admin-account">Chào mừng quản trị viên </p>
-            </div>
-          </div>
-          <div className="box-address">
-            <p className="admin-address">{props.account}</p>
-            <button className="logout_button" onClick={props.logout}>
-              Đăng xuất
-            </button>
-          </div>
-        </div>
-      </Slider>
-
-      <div className="information-car-connected">
-        <form class="form-connected" onSubmit={adminInsert}>
-          <div class="form-group">
-            <label for="name">Nhập CCCD chủ xe:</label>
-            <input
-              style={{ fontSize: "15px", width: "200px" }}
-              type="text"
-              required="required"
-              id="VehicleOwner"
-            />
-          </div>
-          <div class="form-group">
-            <label for="message">Nhập biển số xe:</label>
-            <input
-              style={{ fontSize: "15px", width: "200px" }}
-              required="required"
-              id="numberPlate"
-            ></input>
-          </div>
-          <div class="form-group">
-            <label for="name">Năm sản xuất</label>
-            <input
-              style={{ fontSize: "15px", width: "200px" }}
-              type="text"
-              required="required"
-              id="yearManufac"
-            />
-          </div>
-          <div class="form-group">
-            <label for="name">Loại phương tiện</label>
-            <input
-              style={{ fontSize: "15px", width: "200px" }}
-              type="text"
-              required="required"
-              id="typeOf"
-            />
-          </div>
-          <div class="form-group">
-            <label for="name">Nhãn hiệu xe</label>
-            <input
-              style={{ fontSize: "15px", width: "200px" }}
-              type="text"
-              required="required"
-              id="mark"
-            />
-          </div>
-          <div class="form-group">
-            <label for="name">Số loại</label>
-            <input
-              style={{ fontSize: "15px", width: "200px" }}
-              type="text"
-              required="required"
-              id="modelCode"
-            />
-          </div>
-          <div class="form-group">
-            <label for="name">Số khung</label>
-            <input
-              style={{ fontSize: "15px", width: "200px" }}
-              type="text"
-              required="required"
-              id="chassicNum"
-            />
-          </div>
-          <div class="form-group">
-            <label for="name">Niêm Hạn sử dụng</label>
-            <input
-              style={{ fontSize: "15px", width: "200px" }}
-              type="text"
-              required="required"
-              id="lifetimeLimit"
-            />
-          </div>
-          <div class="form-group">
-            <label for="name">Số phiếu kiểm định</label>
-            <input
-              style={{ fontSize: "15px", width: "200px" }}
-              type="text"
-              required="required"
-              id="insepectionReportN"
-            />
-          </div>
-          <div class="form-group">
-            <label for="name">Hiệu lực đến năm</label>
-            <input
-              style={{ fontSize: "15px", width: "200px" }}
-              type="text"
-              required="required"
-              id="insepectionValidUntil"
-            />
-          </div>
-          <button
+      <div
+        style={{
+          padding: "10px",
+          overflow: "hidden",
+          background:
+            "linear-gradient(90deg,rgba(2, 0, 36, 1) 0%,rgb(39, 85, 134) 38%,rgb(0, 76, 91) 100%)",
+        }}
+      >
+        <Slider {...settings} className="slider">
+          <div
             style={{
-              width: "100px",
-              height: "50px",
-              marginTop: "38px",
-              marginLeft: "38px",
-              fontSize: "20px",
-              color: "white",
-              backgroundColor: "blue",
-              cursor: "pointer",
+              display: "flex",
+              justifyContent: "center",
+              margin: "20px",
             }}
+            className="admin-intro-1"
           >
-            Add info
-          </button>
-        </form>
-      </div>
+            <div className="login-connected">
+              <img src={admin} className="ad-avatar" alt="admin" />
+              <div>
+                <p className="admin-account">Chào mừng quản trị viên </p>
+              </div>
+            </div>
+            <div className="box-address">
+              <p className="admin-address">{props.account}</p>
+              <button className="logout_button" onClick={props.logout}>
+                Đăng xuất
+              </button>
+            </div>
+          </div>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              margin: "20px",
+            }}
+            className="admin-intro-2"
+          >
+            <div className="login-connected">
+              <img src={admin} className="ad-avatar" alt="admin" />
+              <div>
+                <p className="admin-account">Chào mừng quản trị viên </p>
+              </div>
+            </div>
+            <div className="box-address">
+              <p className="admin-address">{props.account}</p>
+              <button className="logout_button" onClick={props.logout}>
+                Đăng xuất
+              </button>
+            </div>
+          </div>
+        </Slider>
+        <div className="register-title">
+          Thành viên đăng ký mới
+        </div>
+        <div className="information-car-connected">
+          <form class="form-connected" onSubmit={adminInsert}>
+            <div class="form-group">
+              <input
+                style={{ fontSize: "15px", width: "500px" }}
+                type="text"
+                required="required"
+                id="VehicleOwner"
+              />
+              <label  for="name">Nhập CCCD chủ xe:</label>
+            </div>
+            <div class="form-group">
+              <input
+                style={{ fontSize: "15px", width: "500px" }}
+                required="required"
+                id="numberPlate"
+              ></input>
+              <label for="message">Nhập biển số xe:</label>
+            </div>
+            <div class="form-group">
+              <input
+                style={{ fontSize: "15px", width: "500px" }}
+                type="text"
+                required="required"
+                id="yearManufac"
+              />
+              <label for="name">Năm sản xuất:</label>
+            </div>
+            <div class="form-group">
+              <input
+                style={{ fontSize: "15px", width: "500px" }}
+                type="text"
+                required="required"
+                id="typeOf"
+              />
+              <label for="name">Loại phương tiện:</label>
+            </div>
+            <div class="form-group">
+              <input
+                style={{ fontSize: "15px", width: "500px" }}
+                type="text"
+                required="required"
+                id="mark"
+              />
+              <label for="name">Nhãn hiệu xe:</label>
+            </div>
+            <div class="form-group">
+              <input
+              
+                style={{ fontSize: "15px", width: "500px" }}
+                type="text"
+                required="required"
+                id="modelCode"
+              />
+              <label for="name">Số loại:</label>
+            </div>
+            <div class="form-group">
+              <input
+                style={{ fontSize: "15px", width: "500px" }}
+                type="text"
+                required="required"
+                id="chassicNum"
+              />
+              <label for="name">Số khung:</label>
+            </div>
+            <div class="form-group">
+              <input
+                style={{ fontSize: "15px", width: "500px" }}
+                type="text"
+                required="required"
+                id="lifetimeLimit"
+              />
+              <label for="name">Niêm Hạn sử dụng:</label>
+            </div>
+            <div class="form-group">
+              <input
+                style={{ fontSize: "15px", width: "500px" }}
+                type="text"
+                required="required"
+                id="insepectionReportN"
+              />
+              <label for="name">Số phiếu kiểm định:</label>
+            </div>
+            <div class="form-group">
+              <input
+                style={{ fontSize: "15px", width: "500px" }}
+                type="text"
+                required="required"
+                id="insepectionValidUntil"
+              />
+              <label for="name">Hiệu lực đến năm:</label>
+            </div>
+            <button
+              className="button-add-info"
+            >
+              Add info
+            </button>
+          </form>
+        </div>
 
-      <CarCard car={props.car} />
-    </div>
+        <CarCard car={props.car} />
+      </div>
   );
 };
 

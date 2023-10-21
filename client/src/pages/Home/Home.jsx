@@ -76,7 +76,6 @@ const Home = (props) => {
         )} */}
       </div>
       <SliderAnimate />
-      <div> <Footer /></div>
     </div>
   );
 };
