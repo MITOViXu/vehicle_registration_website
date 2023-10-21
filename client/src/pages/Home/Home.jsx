@@ -62,7 +62,7 @@ const Home = (props) => {
   return (
     <div>
       <HersoSlider />
-      <div className="home" style={{ marginTop: "70px" }}>
+      <dicv className="home" style={{ marginTop: "70px" }}>
         <div className="HeroSlider"></div>
         <div className="FindCar"><FindCar Submit={handleSubmit} /></div>
         <div className="ResultSearchCar"><ResultSearchCar /></div>
@@ -74,9 +74,8 @@ const Home = (props) => {
         ) : (
         <div className="ResultSearchCar"><ResultSearchCar /></div>
         )} */}
-      </div>
+      </dicv>
       <SliderAnimate />
-      <div> <Footer /></div>
     </div>
   );
 };

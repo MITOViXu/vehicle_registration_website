@@ -29,6 +29,24 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
+.item5{
+  background: linear-gradient(rgb(0, 13, 107, 0.5), rgb(117, 34, 147, 0.5)),  rgb(102, 0, 128) url("../../assets/slider-img/slider-7.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.item6{
+  background: linear-gradient(rgb(0, 13, 107, 0.5), rgb(117, 34, 147, 0.5)),  rgb(102, 0, 128) url("../../assets/slider-img/slider-8.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.item7{
+  background: linear-gradient(rgb(0, 13, 107, 0.5), rgb(117, 34, 147, 0.5)),  rgb(102, 0, 128) url("../../assets/slider-img/slider-9.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
   
 .image_slide{

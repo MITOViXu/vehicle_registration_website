@@ -31,6 +31,9 @@ const HeroSlider = () => {
       <div className="hero-slider item2"></div>
       <div className="hero-slider item3"></div>
       <div className="hero-slider item4"></div>
+      <div className="hero-slider item5"></div>
+      <div className="hero-slider item6"></div>
+      <div className="hero-slider item7"></div>
     </Slider>
   );
 };
