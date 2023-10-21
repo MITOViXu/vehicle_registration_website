@@ -42,6 +42,8 @@ const About = () => {
     <div className="Footer"><Footer></Footer></div>
     <div className="SliderAnimate"><SliderAnimate /></div>
     </div>
+
+
   )
 }
 
