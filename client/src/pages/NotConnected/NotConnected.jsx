@@ -9,6 +9,8 @@ import admin2 from "../../assets/info-admin/admin-2.jpg";
 import admin3 from "../../assets/info-admin/admin-3.jpg";
 import { Container, Row, Col } from "reactstrap";
 import ServicesList from "../../components/ServicesList/ServicesList";
+import BlogList from "../../components/BlogList/BlogList";
+
 const NotConnected = (props) => {
   document.title = "Admin Car";
 
@@ -91,6 +93,18 @@ const NotConnected = (props) => {
             </Col>
 
             <ServicesList />
+          </Row>
+        </Container>
+      </section>
+      <section>
+        <Container>
+          <Row>
+            <Col lg="12" className="mb-5 text-center">
+              <h6 className="section__subtitle">Trãi nghiệm người dùng</h6>
+              <h2 className="section__title">Latest Blogs</h2>
+            </Col>
+
+            <BlogList />
           </Row>
         </Container>
       </section>

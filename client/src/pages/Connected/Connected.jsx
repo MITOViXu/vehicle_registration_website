@@ -136,109 +136,103 @@ const Connected = (props) => {
             </div>
           </div>
         </Slider>
-
+        <div className="register-title">
+          Thành viên đăng ký mới
+        </div>
         <div className="information-car-connected">
           <form class="form-connected" onSubmit={adminInsert}>
             <div class="form-group">
-              <label for="name">Nhập CCCD chủ xe:</label>
               <input
-                style={{ fontSize: "15px", width: "200px" }}
+                style={{ fontSize: "15px", width: "500px" }}
                 type="text"
                 required="required"
                 id="VehicleOwner"
               />
+              <label  for="name">Nhập CCCD chủ xe:</label>
             </div>
             <div class="form-group">
-              <label for="message">Nhập biển số xe:</label>
               <input
-                style={{ fontSize: "15px", width: "200px" }}
+                style={{ fontSize: "15px", width: "500px" }}
                 required="required"
                 id="numberPlate"
               ></input>
+              <label for="message">Nhập biển số xe:</label>
             </div>
             <div class="form-group">
-              <label for="name">Năm sản xuất</label>
               <input
-                style={{ fontSize: "15px", width: "200px" }}
+                style={{ fontSize: "15px", width: "500px" }}
                 type="text"
                 required="required"
                 id="yearManufac"
               />
+              <label for="name">Năm sản xuất:</label>
             </div>
             <div class="form-group">
-              <label for="name">Loại phương tiện</label>
               <input
-                style={{ fontSize: "15px", width: "200px" }}
+                style={{ fontSize: "15px", width: "500px" }}
                 type="text"
                 required="required"
                 id="typeOf"
               />
+              <label for="name">Loại phương tiện:</label>
             </div>
             <div class="form-group">
-              <label for="name">Nhãn hiệu xe</label>
               <input
-                style={{ fontSize: "15px", width: "200px" }}
+                style={{ fontSize: "15px", width: "500px" }}
                 type="text"
                 required="required"
                 id="mark"
               />
+              <label for="name">Nhãn hiệu xe:</label>
             </div>
             <div class="form-group">
-              <label for="name">Số loại</label>
               <input
-                style={{ fontSize: "15px", width: "200px" }}
+              
+                style={{ fontSize: "15px", width: "500px" }}
                 type="text"
                 required="required"
                 id="modelCode"
               />
+              <label for="name">Số loại:</label>
             </div>
             <div class="form-group">
-              <label for="name">Số khung</label>
               <input
-                style={{ fontSize: "15px", width: "200px" }}
+                style={{ fontSize: "15px", width: "500px" }}
                 type="text"
                 required="required"
                 id="chassicNum"
               />
+              <label for="name">Số khung:</label>
             </div>
             <div class="form-group">
-              <label for="name">Niêm Hạn sử dụng</label>
               <input
-                style={{ fontSize: "15px", width: "200px" }}
+                style={{ fontSize: "15px", width: "500px" }}
                 type="text"
                 required="required"
                 id="lifetimeLimit"
               />
+              <label for="name">Niêm Hạn sử dụng:</label>
             </div>
             <div class="form-group">
-              <label for="name">Số phiếu kiểm định</label>
               <input
-                style={{ fontSize: "15px", width: "200px" }}
+                style={{ fontSize: "15px", width: "500px" }}
                 type="text"
                 required="required"
                 id="insepectionReportN"
               />
+              <label for="name">Số phiếu kiểm định:</label>
             </div>
             <div class="form-group">
-              <label for="name">Hiệu lực đến năm</label>
               <input
-                style={{ fontSize: "15px", width: "200px" }}
+                style={{ fontSize: "15px", width: "500px" }}
                 type="text"
                 required="required"
                 id="insepectionValidUntil"
               />
+              <label for="name">Hiệu lực đến năm:</label>
             </div>
             <button
-              style={{
-                width: "100px",
-                height: "50px",
-                marginTop: "38px",
-                marginLeft: "38px",
-                fontSize: "20px",
-                color: "white",
-                backgroundColor: "blue",
-                cursor: "pointer",
-              }}
+              className="button-add-info"
             >
               Add info
             </button>
