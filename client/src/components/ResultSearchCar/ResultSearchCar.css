@@ -2,14 +2,13 @@
     display: flex;
     justify-content: center;
     padding: 25px;
-    height: 20rem;
-    width: 100rem;
+    height: 35vh;
+    width: 100%;
 }
 .information-car {
     text-align: center;
     background-color: #44cec7;
-    width: 80rem;
-    display: flex;
+    display: grid;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);

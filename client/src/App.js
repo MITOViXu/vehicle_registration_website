@@ -51,7 +51,6 @@ function App() {
       <div className="body">
         <Routers />
       </div>
-      <Footer />
     </div>
   );
 }
