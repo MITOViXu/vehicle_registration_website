@@ -80,6 +80,7 @@ const Navbar = () => {
           </div>
 
           <div className="request-call">
+            <img src={'telephone.png'} alt="telephone" className="request-call-icon" />
             <button className="request-call-btn">Tư vấn</button>
           </div>
         
