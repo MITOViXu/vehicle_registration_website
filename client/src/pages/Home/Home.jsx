@@ -14,58 +14,26 @@ import Footer from "../../components/Footer/Footer.jsx";
 const Home = (props) => {
   const [provider, setProvider] = useState(null);
   const [vehicleinfor, setVehicleinfor] = useState(null);
-
-  //const [numberPlate, setNumberPlate] = useState("");
-  // const { contractInstance } = props.car;
-
-  //   async function handleNumberPlateChange(e) {
-  //     setNumberPlate(e.target.value);
-  //   }
-
-  //   const handleSubmit = async (e) => {
-  //     try {
-  //       const provider = new ethers.providers.JsonRpcProvider(
-  //         "https://eth-sepolia.g.alchemy.com/v2/MPMfIIQQw3C8j6ZPKtmlX-dBPCSE7rmU"
-  //       );
-  //       const contractInstance = new ethers.Contract(
-  //         contractAddress,
-  //         abi,
-  //         provider
-  //       );
-  //       const results = await contractInstance.getVehicleInfo(numberPlate);
-  //       setVehicleinfor(results);
-  //       console.log(numberPlate)
-  //       console.log(vehicleinfor)
-  //     } catch (e) {console.log(e)}
-  //   };
-
-  const handleSubmit = async (e) => {
-    try {
-      e.preventDefault();
-      const numberPLate = document.querySelector("#message").value;
-      const provider = new ethers.providers.JsonRpcProvider(
-        "https://eth-sepolia.g.alchemy.com/v2/MPMfIIQQw3C8j6ZPKtmlX-dBPCSE7rmU"
-      );
-      const contractInstance = new ethers.Contract(
-        contractAddress,
-        abi,
-        provider
-      );
-      const results = await contractInstance.getVehicleInfo(numberPLate);
-      setVehicleinfor(results);
-      console.log(numberPLate);
-      console.log(vehicleinfor);
-    } catch (e) {
-      console.log(e);
-    }
-  };
+  async function addInfo(info) {
+    setVehicleinfor(info);
+  }
   return (
     <div>
       <HersoSlider />
       <div className="home" style={{ marginTop: "70px" }}>
-        <div className="FindCar"><FindCar Submit={handleSubmit} /></div>
-        <div className="ResultSearchCar"><ResultSearchCar /></div>
-        <div className="AboutUs"><AboutUs /></div>
+        <div className="FindCar">
+          <FindCar addInfo={addInfo} />
+        </div>
+        {vehicleinfor ? (
+          <div className="ResultSearchCar">
+            <ResultSearchCar vehicleinfor={vehicleinfor} />
+          </div>
+        ) : (
+          <div></div>
+        )}
+        <div className="AboutUs">
+          <AboutUs />
+        </div>
         {/* {vehicleinfor == null ? (
           <div>
           

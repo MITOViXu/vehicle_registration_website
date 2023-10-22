@@ -1,7 +1,7 @@
 import React from 'react'
 import "./ResultSearchCar.css"
 
-const ResultSearchCar = (vehicleinfor) => {
+const ResultSearchCar = ({vehicleinfor}) => {
   return (
     <div className="ResultCar">
         <div className="information-car">
